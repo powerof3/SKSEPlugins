@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="po3_functions.cpp" />
+    <ClCompile Include="po3_graphicfunctions.cpp" />
+    <ClCompile Include="po3_offsets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="po3_functions.h" />
+    <ClInclude Include="po3_graphicfunctions.h" />
+    <ClInclude Include="po3_offsets.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2995 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1303497d-ec17-4971-85a8-2ea910909ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim">
+      <UniqueIdentifier>{0b6d379b-2660-48b4-a7a8-edab247c586b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSScript">
+      <UniqueIdentifier>{474a7669-5635-4137-86fa-8eea18ed0bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSResource">
+      <UniqueIdentifier>{a0dac212-23ec-48ba-b8aa-20d86b8609e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Forms">
+      <UniqueIdentifier>{dec712e5-579c-4321-a919-22dfd539c44e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Scaleform">
+      <UniqueIdentifier>{50f2cdca-48c3-4ff3-9d2d-e611adbc6b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Events">
+      <UniqueIdentifier>{c0ef3f47-4cf9-48d3-abf7-09ff49778618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Menus">
+      <UniqueIdentifier>{a4370bf6-751d-47da-8332-354a3e04a4d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Camera">
+      <UniqueIdentifier>{20357cae-8cd8-464e-841f-b44df4afa3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSSystem">
+      <UniqueIdentifier>{653b3b0c-f89c-4691-8c7a-036a87772047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSCore">
+      <UniqueIdentifier>{7dcc7e29-848b-4133-9e99-b61029ac6a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSMain">
+      <UniqueIdentifier>{3416c63e-3999-4fd8-8b6b-391cb558b3f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\FileIO">
+      <UniqueIdentifier>{ebcb6849-66fd-48ba-b10e-2d9ddfb655d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Sky">
+      <UniqueIdentifier>{cec718c4-b782-4342-a910-14aedf34210b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSHavok">
+      <UniqueIdentifier>{ca874a62-87e2-42df-91c1-9301814527dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSDiag">
+      <UniqueIdentifier>{71ac73f7-81b8-4212-8842-d97cd431e531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSDiag\Win32">
+      <UniqueIdentifier>{51b691b4-712c-4728-ab54-ffecb0179600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSAudio">
+      <UniqueIdentifier>{a9473c09-f144-4d96-a4b0-cb4c282cc644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\FaceGen">
+      <UniqueIdentifier>{f0f837eb-142f-471a-824d-8433f1818143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Misc">
+      <UniqueIdentifier>{3c611c2b-b6a0-43b0-9bdc-d5296418385b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\FormComponents">
+      <UniqueIdentifier>{555f2d26-4e87-4fb8-877d-998ad08750fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\ExtraData">
+      <UniqueIdentifier>{b221e42a-7dfe-443e-bc9d-5bc97b0e2e73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\NetImmerse">
+      <UniqueIdentifier>{3bb0651c-9e53-496d-a478-d0c26547ee02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{188c63cb-1f69-4124-b4d0-9f454543bdf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSResource">
+      <UniqueIdentifier>{29f0d32a-af13-4503-923d-a2644472196d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSScript">
+      <UniqueIdentifier>{cfe6fdd6-8b33-4a56-a039-7e9b8fde23dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scaleform">
+      <UniqueIdentifier>{adc65de8-4b85-4d27-86ce-502f704a144f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menus">
+      <UniqueIdentifier>{6ffa21ca-8817-43f4-93ee-9a606877f8c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{040e74e7-44fd-47e1-b4ab-adf363bab08a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileIO">
+      <UniqueIdentifier>{3a583c35-7637-4bd8-a6e8-2fe326a95860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSMain">
+      <UniqueIdentifier>{15a0f43c-cadf-4392-ba70-9bea01d8e0b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sky">
+      <UniqueIdentifier>{9d3b3aae-1e41-417e-aa1a-60733fdc7511}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSCore">
+      <UniqueIdentifier>{83a0e1b5-6031-4cbf-92e3-d66f9899a095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSSystem">
+      <UniqueIdentifier>{de9c1cd2-971d-4be7-a200-3b4ea341ccea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExtraData">
+      <UniqueIdentifier>{998b4f18-87f4-4998-8043-4abdef14f9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FormComponents">
+      <UniqueIdentifier>{4bc3373f-400f-4447-8f32-b18a98f2f6f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NetImmerse">
+      <UniqueIdentifier>{8d6af3ef-6682-4b54-bbcc-b46cfec70877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Misc">
+      <UniqueIdentifier>{e9a602ad-7207-422a-bdbb-cf532f7fba79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{1becef41-fe2c-49f7-98fb-c3670eea74e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSDevices">
+      <UniqueIdentifier>{3b5bc767-c561-4c43-8306-98d59698ba46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Animation">
+      <UniqueIdentifier>{1e21b124-d1ac-4adc-9e24-38bd78bc0dd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSPathFinding">
+      <UniqueIdentifier>{e97b0f0a-f902-49ff-a52c-da7096de6edb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSPathFinding">
+      <UniqueIdentifier>{d61440d8-77fd-4166-a153-b9c2d759c28c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animation">
+      <UniqueIdentifier>{8b6baccd-6327-4747-b4bd-60e37e03958c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BSDevices">
+      <UniqueIdentifier>{f3b8f6f8-090f-4e22-b5d7-76e64831a1f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSShader">
+      <UniqueIdentifier>{19822236-4a0e-4b8e-a195-629be6cea168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\BSMain\BSHalfEdgeMesh">
+      <UniqueIdentifier>{af8b4fdf-1312-4b14-ad45-c001e94e39a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\AI">
+      <UniqueIdentifier>{0f1e0cc3-f30c-4dc4-aa92-7be6de228aae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Water">
+      <UniqueIdentifier>{8d8a1c54-f022-4075-809a-0e48b2c54008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Magic">
+      <UniqueIdentifier>{dc446e03-20fa-41e3-b44e-2dc04c7fd112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\LOS">
+      <UniqueIdentifier>{b3a607ec-8a7e-426e-853b-9618e43c652c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TESForms">
+      <UniqueIdentifier>{d782d2f8-d0e7-45fe-b080-09404a709e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Radiant Story">
+      <UniqueIdentifier>{bf112c25-3cc4-47fd-ad3c-40b1055f7d69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Havok">
+      <UniqueIdentifier>{7c653a07-140b-42b8-b83f-242e0b05312c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Regions">
+      <UniqueIdentifier>{67e343b2-2457-4bd3-8ec4-ab94a38af03a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\SpeedTree">
+      <UniqueIdentifier>{0c5ae765-724c-4023-a42a-fc37dc0b086b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AI">
+      <UniqueIdentifier>{e04b986c-42aa-46a2-8194-57f6b41eed7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\DistantTerrain">
+      <UniqueIdentifier>{a7c894f5-b9a4-4d15-b7c1-c32fade3bf8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TESForms\Character">
+      <UniqueIdentifier>{4e92c2f3-45ce-4c7c-b5dc-b50301c7670c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TESForms\Gameplay">
+      <UniqueIdentifier>{1baa565a-9c4b-4bf6-93a8-679291cd44ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TESForms\Objects">
+      <UniqueIdentifier>{91bd6982-1f39-41b3-934a-48441176c3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TESForms\World">
+      <UniqueIdentifier>{d6533450-5d10-469d-8ba5-b6aed70b3d35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TESForms\World\Components">
+      <UniqueIdentifier>{1f0a56e1-d825-47ea-b7a9-02472bd88203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TESForms">
+      <UniqueIdentifier>{e81e7f45-68a7-49f1-a2df-32ef9db4d7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TESForms\Character">
+      <UniqueIdentifier>{df5777a3-a059-4119-a3fc-265938dc185a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TESForms\Gameplay">
+      <UniqueIdentifier>{aa221c6b-f27a-450b-ba42-568b208c0cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TESForms\World">
+      <UniqueIdentifier>{23ef87e1-8266-465e-8f08-fad024523910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TESForms\Objects">
+      <UniqueIdentifier>{ee6ee218-43cf-4b8e-b0a3-d2af0018a15c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Pathfinding">
+      <UniqueIdentifier>{96042db9-b69b-4758-961e-0cdbe5565f60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Pathfinding\NavMesh">
+      <UniqueIdentifier>{3d9b1c76-4390-46a5-8a7d-cdec555cb928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Pathfinding\NavMeshInfo">
+      <UniqueIdentifier>{0fdbdac8-1794-446e-9706-2e2aaaf9778c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Pathfinding\Obstacle">
+      <UniqueIdentifier>{3010ae9f-2898-400b-a2ae-862ab025d6be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Pathfinding\Pathing">
+      <UniqueIdentifier>{c116dad1-40a3-422b-bb1a-1972e26b3998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Pathfinding\Searches">
+      <UniqueIdentifier>{87168e58-d940-4260-ba43-a056b9a7185f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Magic">
+      <UniqueIdentifier>{d1cb70cb-6936-47c1-9174-64fe60e52a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\Systems">
+      <UniqueIdentifier>{11c60374-2373-4217-ae3d-e6623350140a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skyrim\TempEffects">
+      <UniqueIdentifier>{551462c9-0180-417e-b549-6af88a139d43}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SkyrimScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkyrimVM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VMState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSResource\BSResourceNiBinaryStream.cpp">
+      <Filter>Source Files\BSResource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptArray.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptClass.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptIFunction.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptIFunctionArguments.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptNativeFunctions.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptObject.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptPackUnpack.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSScript\BSScriptVariable.cpp">
+      <Filter>Source Files\BSScript</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraAliasInstanceArray.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraCannotWear.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraCharge.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraContainerChanges.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraCount.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraEnableStateParent.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraEnchantment.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraForcedTarget.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraHealth.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraHotkey.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraLinkedRef.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraLinkedRefChildren.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraOwnership.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraReferenceHandle.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraSoul.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraTextDisplayData.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraTimeLeft.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\NonActorMagicTarget.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\BaseExtraList.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\BGSBipedObjectForm.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\BGSPerkRankArray.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\TESContainer.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\TESSpellList.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\TintMask.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiBinaryStream.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiExtraData.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiGeometry.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiInterpolators.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiLight.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiMaterial.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiMemory.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiNodes.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiProperties.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiRenderer.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiRTTI.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiSerialization.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiTextures.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiTypes.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scaleform\GMemory.cpp">
+      <Filter>Source Files\Scaleform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scaleform\GRefCount.cpp">
+      <Filter>Source Files\Scaleform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\HUDMenu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\IMenu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera\LocalMapCamera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera\PlayerCamera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileIO\TES.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileIO\TESDataHandler.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSMain\Setting.cpp">
+      <Filter>Source Files\BSMain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sky\Sky.cpp">
+      <Filter>Source Files\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTTI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSCore\BSFixedString.cpp">
+      <Filter>Source Files\BSCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSCore\BSSpinLock.cpp">
+      <Filter>Source Files\BSCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSCore\BSString.cpp">
+      <Filter>Source Files\BSCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSCore\BSTArray.cpp">
+      <Filter>Source Files\BSCore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSSystem\BSTSmartPointer.cpp">
+      <Filter>Source Files\BSSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSMain\BSHandleRefObject.cpp">
+      <Filter>Source Files\BSMain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\RaceSexMenu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiRefObject.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiObject.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiObjectNET.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiNode.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiCamera.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\MiscStat.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\MagicFavorites.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events\ScriptEvent.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events\BGSStoryEvent.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\BGSKeywordForm.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\MenuManager.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSResource\BSResource.cpp">
+      <Filter>Source Files\BSResource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSPathFinding\BSNavmeshInfo.cpp">
+      <Filter>Source Files\BSPathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileIO\BGSSaveLoadManager.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileIO\TESFile.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileIO\BGSSaveLoadGame.cpp">
+      <Filter>Source Files\FileIO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiCriticalSection.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSSystem\BSTCreateFactory.cpp">
+      <Filter>Source Files\BSSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\Console.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSResource\BSResourceArchive.cpp">
+      <Filter>Source Files\BSResource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiPoint3.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\NiMatrix3.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera\TESCamera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSMain\BSThreadManager.cpp">
+      <Filter>Source Files\BSMain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSResource\BSResourceEntry.cpp">
+      <Filter>Source Files\BSResource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSResource\BSResourceStreamBase.cpp">
+      <Filter>Source Files\BSResource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation\AnimationClipDataSingleton.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSDevices\InputManager.cpp">
+      <Filter>Source Files\BSDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSDevices\PlayerControls.cpp">
+      <Filter>Source Files\BSDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Events\DefaultObjectReadyEvent.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSMain\Main.cpp">
+      <Filter>Source Files\BSMain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation\AnimationHandlers.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\InventoryChanges.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSDevices\MenuControls.cpp">
+      <Filter>Source Files\BSDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSDevices\PlayerInputHandler.cpp">
+      <Filter>Source Files\BSDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\UIMessage.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSDevices\MenuEventHandler.cpp">
+      <Filter>Source Files\BSDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\BGSImpactManager.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\BGSFootstepManager.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scaleform\GString.cpp">
+      <Filter>Source Files\Scaleform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetImmerse\BSFadeNode.cpp">
+      <Filter>Source Files\NetImmerse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BSDevices\InputMappingManager.cpp">
+      <Filter>Source Files\BSDevices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\BGSDynamicPersistenceManager.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Misc\GarbageCollector.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AI\BGSAttackData.cpp">
+      <Filter>Source Files\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AI\BGSAttackDataMap.cpp">
+      <Filter>Source Files\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FormComponents\TESForm.cpp">
+      <Filter>Source Files\FormComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\World\BGSLocation.cpp">
+      <Filter>Source Files\TESForms\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\World\TESObjectCELL.cpp">
+      <Filter>Source Files\TESForms\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\World\TESObjectREFR.cpp">
+      <Filter>Source Files\TESForms\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\World\PlayerCharacter.cpp">
+      <Filter>Source Files\TESForms\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Objects\BGSOutfit.cpp">
+      <Filter>Source Files\TESForms\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Gameplay\BGSDefaultObjectManager.cpp">
+      <Filter>Source Files\TESForms\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Gameplay\BGSListForm.cpp">
+      <Filter>Source Files\TESForms\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Gameplay\BGSTextureSet.cpp">
+      <Filter>Source Files\TESForms\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\World\Actor.cpp">
+      <Filter>Source Files\TESForms\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\BGSBaseAlias.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\BGSEquipSlot.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\BGSLocAlias.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\BGSPerk.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\BGSRefAlias.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\BGSScene.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\TESPackage.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\TESQuest.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\TESRace.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\TESTopicInfo.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Magic\ActiveEffect.cpp">
+      <Filter>Source Files\Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Animation\BShkbAnimationGraph.cpp">
+      <Filter>Source Files\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtraData\ExtraLightData.cpp">
+      <Filter>Source Files\ExtraData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Objects\TESObjectARMA.cpp">
+      <Filter>Source Files\TESForms\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Character\TESNPC.cpp">
+      <Filter>Source Files\TESForms\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Objects\TESObjectBOOK.cpp">
+      <Filter>Source Files\TESForms\Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Skyrim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\SkyrimScript.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\SkyrimVM.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\VMArray.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\VMState.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScript.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptArray.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptClass.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptIFunction.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptIFunctionArguments.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptIObjectHandlePolicy.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptNativeFunctions.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptObject.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptObjectBindPolicy.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptPackUnpack.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptStack.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptTypeTraits.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptUnlinkedTypes.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptVariable.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResource.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceNiBinaryStream.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceStream.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\BSExtraData.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraAliasInstanceArray.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCannotWear.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCharge.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCollisionData.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraContainerChanges.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCount.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraDataTypes.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraEnableStateParent.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraEnchantment.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraEncounterZone.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraFactionChanges.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraFlags.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraFollower.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraFollowerSwimBreadcrumbs.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraForcedTarget.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraHealth.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraHotkey.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraInteraction.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLightData.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLinkedRef.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLinkedRefChildren.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLocation.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLocationRefType.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLock.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraMagicCaster.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraMapMarker.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraOwnership.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraPersistentCell.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraPoison.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraPrimitive.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraPromotedRef.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraReferenceHandle.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraSayTopicInfo.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraScale.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraSoul.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraStartingPosition.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraTextDisplayData.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraTimeLeft.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraWornLeft.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\NonActorMagicCaster.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\NonActorMagicTarget.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\ActorValueOwner.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BaseExtraList.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BaseFormComponent.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSAttackDataForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSBehaviorGraphModel.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSBipedObjectForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSBlockBashData.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSDestructibleObjectForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSEquipType.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSIdleCollection.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSKeywordForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSMenuDisplayObject.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSMessageIcon.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSOpenCloseForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSOverridePackCollection.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSPerkRankArray.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSPickupPutdownSounds.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSPreloadable.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSSkillPerkTreeNode.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSSkinForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BGSTextureModel.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\BSMaterialObject.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\Condition.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESActorBaseData.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESAIForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESAttackDamageForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESBipedModelForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESChildCell.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESContainer.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESDescription.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESEnchantableForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESFullName.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESIcon.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESImageSpaceModifiableForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESLeveledList.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESMagicCasterForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESMagicTargetForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESModel.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESModelPSA.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESModelRDT.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESModelTextureSwap.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESModelTri.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESProduceForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESQualityForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESRaceForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESReactionForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESSpellList.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESTexture.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESTexture1024.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESValueForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESWeightForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TintMask.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\ActiveEffect.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\Actor.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\ActorValueInfo.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\AlchemyItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\ArrowProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BarrierProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BeamProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSAcousticSpace.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSAction.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSAddonNode.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSArtObject.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSAssociationType.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSBaseAlias.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSBodyPartData.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSCameraPath.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSCameraShot.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSCollisionLayer.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSColorForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSConstructibleObject.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSDebris.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSDefaultObjectManager.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSDialogueBranch.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSDualCastData.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSEncounterZone.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSEquipSlot.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSExplosion.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSFootstep.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSFootstepSet.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSHazard.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSHeadPart.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSIdleMarker.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSImpactData.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSImpactDataSet.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSKeyword.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSLightingTemplate.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSListForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSLocAlias.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSLocation.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSLocationRefType.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMaterialObject.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMaterialType.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMenuIcon.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMessage.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMovableStatic.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMovementType.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMusicTrackFormWrapper.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSMusicType.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSNote.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSOutfit.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSPerk.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSRagdoll.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSRefAlias.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSReferenceEffect.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSRelationship.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSReverbParameters.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSScene.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSShaderParticleGeometryData.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSSoundCategory.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSSoundDescriptorForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSSoundOutput.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSStaticCollection.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSStoryManagerBranchNode.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSStoryManagerEventNode.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSStoryManagerNodeBase.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSStoryManagerQuestNode.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSStoryManagerTreeForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSTalkingActivator.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSTextureSet.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSVoiceType.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\ChainExplosion.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\Character.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\ConeProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\EffectSetting.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\EnchantmentItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\Explosion.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\FlameProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\GrenadeProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\Hazard.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\IngredientItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\MagicItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\MissileProjectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\NavMesh.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\NavMeshInfoMap.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\PlayerCharacter.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\Projectile.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\Script.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\ScrollItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\SpellItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESActorBase.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESAmmo.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESBoundAnimObject.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESBoundObject.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESClass.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESClimate.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESCombatStyle.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESEffectShader.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESEyes.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESFaction.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESFlora.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESFurniture.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESGlobal.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESGrass.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESIdleForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESImageSpace.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESImageSpaceModifier.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESKey.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESLandTexture.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESLevCharacter.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESLevItem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESLevSpell.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESLoadScreen.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESNPC.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObject.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectACTI.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectANIO.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectARMA.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectARMO.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectBOOK.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectCELL.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectCONT.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectDOOR.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectLAND.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectLIGH.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectMISC.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectREFR.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectSTAT.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectTREE.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESObjectWEAP.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESPackage.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESQuest.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESRace.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESRegion.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESShout.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESSoulGem.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESSound.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESTopic.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESTopicInfo.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESWaterForm.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESWeather.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESWordOfPower.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\TESWorldSpace.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptIForEachScriptObjectFunctor.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\BSTextureSet.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiBinaryStream.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiExtraData.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiGeometry.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiInterpolators.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiLight.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiMaterial.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiMemory.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiNodes.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiProperties.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiRTTI.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiSerialization.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTArray.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTextures.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTypes.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Forms\BGSApparatus.h">
+      <Filter>Header Files\Skyrim\Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\InputEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\FxGameDelegate.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GFxLoader.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GFxPlayer.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GMemory.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GRefCount.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GString.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GTypes.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GFxResource.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GStats.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\Console.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\IMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\BarterMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\RaceSexMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\MapMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\HUDMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\DialogueMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\MainMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\MagicMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\InventoryMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\LocalMapCamera.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\MapCamera.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\PlayerCamera.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\RaceSexCamera.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\TESCamera.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\TESCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\FirstPersonState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\ThirdPersonState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\DragonCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\HorseCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\TweenMenuCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\VATSCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\FreeCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\AutoVanityState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\FurnitureCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\IronSightsState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\BleedoutCameraState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Camera\PlayerCameraTransitionState.h">
+      <Filter>Header Files\Skyrim\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraEditorID.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraSeenData.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSTSmartPointer.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSStorage.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSStreamParser.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSTBTreeFile.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSTCreateFactory.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSTPointerAndFlags.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Memory.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\RTTI.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSFixedString.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSSpinLock.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSString.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTArray.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTEvent.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTHashMap.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTList.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTScatterTable.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTSingleton.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\Setting.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\TES.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\TESDataHandler.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\ModelLoader.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\TESModelDB.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Sky.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Moon.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\SkyObject.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Sun.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSNonReentrantSpinLock.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\HeapBlocks.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSHandleRefObject.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\ThreadSafeStructures.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSBitStream.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSCurrent.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSCoreTypes.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDiag\StackTraceCapture.h">
+      <Filter>Header Files\Skyrim\BSDiag</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDiag\StackTraceRecorder.h">
+      <Filter>Header Files\Skyrim\BSDiag</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDiag\Win32\PCPolicy.h">
+      <Filter>Header Files\Skyrim\BSDiag\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSAudioManager.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceEntryQueue.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceFreeList.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceStreamBase.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceUtil.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceEntry.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceEntryCache.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceEntryDB.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptMemoryPagePolicy.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptInternalVDescTable.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptObjectTypeInfo.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptPropertyTypeInfo.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\BSTFactory.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\QueuedFile.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GRenderer.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GList.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiRefObject.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiObject.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiObjectNET.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiAVObject.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenModel.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenMorphData.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenNiNode.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenManager.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenKeyframe.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenDB.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenAnimationData.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FaceGen\BSFaceGenBinaryFile.h">
+      <Filter>Header Files\Skyrim\FaceGen</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiRenderer.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiNode.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiCullingProcess.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiAccumulator.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiBackToFrontAccumulator.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiAlphaAccumulator.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTimeController.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiInterpController.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiCamera.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\BSRenderTargetGroup.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\CraftingSubMenus.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSAttachTechniques.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\InventoryChanges.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSJSONUtil.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSDecalManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSDynamicPersistenceManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSGrassManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSPrimitive.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSSceneInfo.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BipedAnim.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\LipSynchAnim.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\MiscStats.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\ContainerMenu.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Clouds.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\GarbageCollector.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\MagicFavorites.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Atmosphere.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Stars.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Sky\Precipitation.h">
+      <Filter>Header Files\Skyrim\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSTaskManager.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSTask.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Macros.h">
+      <Filter>Header Files\Skyrim</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiSingleInterpController.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiFloatInterpController.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSHavok\bhkExtraData.h">
+      <Filter>Header Files\Skyrim\BSHavok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSHavok\bhkPhantomOverlapListener.h">
+      <Filter>Header Files\Skyrim\BSHavok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSHavok\bhkStream.h">
+      <Filter>Header Files\Skyrim\BSHavok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraHavok.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCell3D.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCellWaterType.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraRegionList.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraWorn.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\BGSStoryEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\BGSStoryEventAutoRegister.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\BGSStoryEventManager.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\BGSStoryEventMember.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\ScriptEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\PositionPlayerEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\Inventory3DManager.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\MenuManager.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\UIManager.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\UIStringHolder.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\MenuEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\InputDevice.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTBTree.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\BSTObjectArena.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\AStarSearch.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSNavmesh.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSNavmeshFlagFilters.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSNavmeshInfo.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSNavmeshRayCast.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSNavmeshTriangle.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPathingNode.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPathingSpline.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPathingStart.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPathSmootherRayCast.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSTPathingFactory.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\MovementArbitrationAverage.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\MovementArbitrationMaxWeight.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\MovementParameters.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\MovementTypes.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\IAnimationGraphManagerHolder.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\BSAnimationGraphManager.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\AnimationClipDataSingleton.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\AnimationSetDataSingleton.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\BGSGamebryoSequenceGeneratorHolderSingleton.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\TESForm.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiSmartPointer.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\BGSSaveLoadManager.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTMap.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTMapBase.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTDefaultAllocator.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTPointerMap.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTPointerAllocator.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\TESFile.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\BSFile.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FileIO\BGSSaveLoadGame.h">
+      <Filter>Header Files\Skyrim\FileIO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiCriticalSection.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\BSAnimationGraphChannel.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\SimpleAnimationGraphManagerHolde.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\BSTAnimationGraphDataChannel.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceArchive.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiPoint3.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiPoint2.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiMatrix3.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSThreadManager.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceCacheDrive.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceLocation.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceLooseFileLocation.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSResource\BSResourceStreamParser.h">
+      <Filter>Header Files\Skyrim\BSResource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\PlayerInputHandler.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\PlayerControls.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\MenuControls.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\InputManager.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\ActorEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Events\DefaultObjectsReadyEvent.h">
+      <Filter>Header Files\Skyrim\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\Main.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\CRC.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\BSResponse.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSSystem\IHandlerFunctor.h">
+      <Filter>Header Files\Skyrim\BSSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\AnimationHandlers.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSCore\CompactingStoreCommon.h">
+      <Filter>Header Files\Skyrim\BSCore</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSShader\BSShaderProperty.h">
+      <Filter>Header Files\Skyrim\BSShader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSLODMultiIndexTriShape.h">
+      <Filter>Header Files\Skyrim\BSMain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSHarfEdgeMesh\BSHEAttribute.h">
+      <Filter>Header Files\Skyrim\BSMain\BSHalfEdgeMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSMain\BSHarfEdgeMesh\BSHEMeshScrapAllocator.h">
+      <Filter>Header Files\Skyrim\BSMain\BSHalfEdgeMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptBoundScript.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSNamedPackageData.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSProcedure.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSProcedureTree.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\TValueArray.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\ActorValue.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Water\BGSAutoWater.h">
+      <Filter>Header Files\Skyrim\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Water\BGSWaterAudio.h">
+      <Filter>Header Files\Skyrim\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Water\BGSWaterCollisionManager.h">
+      <Filter>Header Files\Skyrim\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Water\TESWater.h">
+      <Filter>Header Files\Skyrim\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\IPostAnimationChannelUpdateFunctor.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\IPackageData.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraOutfitItem.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraLeveledItem.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraDroppedItemList.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraItemDropper.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\MenuEventHandler.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiControllerManager.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiControllerSequence.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraActivateRefChildren.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\BSScaleformLoader.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\UIMessage.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Scaleform\GFxEvent.h">
+      <Filter>Header Files\Skyrim\Scaleform</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSFootstepManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSImpactManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSCombatImpactManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSCollisionSoundManager.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiSwitchNode.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\BSFadeNode.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraAshPileRef.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\InputMappingManager.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSDevices\KeyCode.h">
+      <Filter>Header Files\Skyrim\BSDevices</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraTeleport.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\IMovementControllerRegisterInterface.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\IMovementInterface.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\IAnimationSetCallbackFunctor.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\NetImmerse\NiTStringMap.h">
+      <Filter>Header Files\Skyrim\NetImmerse</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptInternalCodeTasklet.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptIFuncCallQuery.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptIVirtualMachine.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSScript\BSScriptErrorLogger.h">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPathingCell.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPathingCellManager.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraProcessMiddleLow.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCellMusicType.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraCellSkyRegion.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraDetachTime.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraObjectHealth.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\ExtraData\ExtraPackage.h">
+      <Filter>Header Files\Skyrim\ExtraData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\EffectItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\BGSDualCastData.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\EffectSetting.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\MagicItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\LOS\BGSLOSGenPagedStack.h">
+      <Filter>Header Files\Skyrim\LOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\LOS\BGSLOSGenParallelTaskManager.h">
+      <Filter>Header Files\Skyrim\LOS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Radiant Story\BGSStoryManagerNodeBase.h">
+      <Filter>Header Files\Skyrim\Radiant Story</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Radiant Story\BGSStoryManagerTreeForm.h">
+      <Filter>Header Files\Skyrim\Radiant Story</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Radiant Story\BGSStoryManagerBranchNode.h">
+      <Filter>Header Files\Skyrim\Radiant Story</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Radiant Story\BGSStoryManagerEventNode.h">
+      <Filter>Header Files\Skyrim\Radiant Story</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Radiant Story\BGSStoryManagerQuestNode.h">
+      <Filter>Header Files\Skyrim\Radiant Story</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Havok\CellMopp.h">
+      <Filter>Header Files\Skyrim\Havok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Havok\HavokStream.h">
+      <Filter>Header Files\Skyrim\Havok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Havok\TESTrapListener.h">
+      <Filter>Header Files\Skyrim\Havok</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegion.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionDataManager.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionDataSound.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectGeometryDecal.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectSimpleDecal.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectWeaponBlood.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSAttackData.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSAttackDataMap.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\DistantTerrain\BGSTerrainNode.h">
+      <Filter>Header Files\Skyrim\DistantTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\SpeedTree\BSTreeManager.h">
+      <Filter>Header Files\Skyrim\SpeedTree</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionObjectBase.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionDataGrass.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionDataLandscape.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionDataMap.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionDataWeather.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionGrassObject.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionGrassObjectList.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionList.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Regions\TESRegionData.h">
+      <Filter>Header Files\Skyrim\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\BGSLocalizedString.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESObjectREFR.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Actor.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Character.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\ActorKnowledge.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\ActorMagicCaster.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\ActorProcessManager.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\ActorState.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\DetectionState.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\MovementControllerAI.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Components\MovementControllerNPC.h">
+      <Filter>Header Files\Skyrim\TESForms\World\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSAssociationType.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSBodyPartData.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSDialogueBranch.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSEquipSlot.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSHeadPart.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSIdleMarker.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSKeyword.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSMovementType.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSNote.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSPerk.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSRagdoll.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSRefAlias.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSRelationship.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSScene.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSVoiceType.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESClass.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESEyes.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESFaction.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESIdleForm.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESNPC.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESQuest.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESRace.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESTopic.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESTopicInfo.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSBaseAlias.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSLocAlias.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESActorBase.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSEntryPointFunction.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSPerkEntry.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\TESPackage.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSSceneAction.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSEncounterZone.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSLightingTemplate.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSLocation.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSReferenceEffect.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSShaderParticleGeometryData.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESClimate.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESImageSpace.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESImageSpaceModifier.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESLandTexture.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESObjectCELL.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESWaterForm.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESWeather.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESWorldSpace.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSLargeRefData.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSLoadedReferenceCollection.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESLand.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSWorldLocation.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSScenePhase.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSSceneActionTimer.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\TESObjectLAND.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESGrass.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESLevCharacter.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESLevItem.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESLevSpell.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObject.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectACTI.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectANIO.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectARMA.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectARMO.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectBOOK.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectCONT.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectDOOR.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectMISC.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectSTAT.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectTREE.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectWEAP.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSAddonNode.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSApparatus.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSArtObject.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSConstructibleObject.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSDebris.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSExplosion.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSHazard.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSMovableStatic.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSOutfit.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSStaticCollection.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESAmmo.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESCombatStyle.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESEffectShader.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESFurniture.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESObjectLIGH.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESBoundAnimObject.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESBoundObject.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESLight.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSAcousticSpace.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSCameraPath.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSCameraShot.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSCollisionLayer.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSColorForm.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSDefaultObjectManager.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSFootstep.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSFootstepSet.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSImpactData.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSImpactDataSet.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSListForm.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSMaterialObject.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSMaterialType.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSMenuIcon.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSMessage.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSMusicTrackFormWrapper.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSMusicType.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSReverbParameters.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSSoundCategory.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSSoundDescriptorForm.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSSoundOutput.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSTextureSet.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\TESGlobal.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\TESLoadScreen.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\TESShout.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\TESSound.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\TESWordOfPower.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\BGSStandardSoundDef.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESFlora.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESKey.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\TESScript.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\BGSTalkingActivator.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Objects\TESSoulGem.h">
+      <Filter>Header Files\Skyrim\TESForms\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\BGSAction.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BGSLocationRefType.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Character\ActorValueInfo.h">
+      <Filter>Header Files\Skyrim\TESForms\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\BSTempEffect.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\ReferenceEffect.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\ReferenceEffectController.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\PlayerCharacter.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\ArrowProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BarrierProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\BeamProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\ChainExplosion.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\ConeProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Explosion.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\FlameProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\GrenadeProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Hazard.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\MissileProjectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\World\Projectile.h">
+      <Filter>Header Files\Skyrim\TESForms\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\SpellItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\AlchemyItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\EnchantmentItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\IngredientItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\ScrollItem.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TESForms\Gameplay\Script.h">
+      <Filter>Header Files\Skyrim\TESForms\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\NavMesh\NavMesh.h">
+      <Filter>Header Files\Skyrim\Pathfinding\NavMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\NavMeshInfo\NavMeshInfoMap.h">
+      <Filter>Header Files\Skyrim\Pathfinding\NavMeshInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\ActiveEffect.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\FormComponents\FormTypes.h">
+      <Filter>Header Files\Skyrim\FormComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\NavMeshInfo\NavmeshInfo.h">
+      <Filter>Header Files\Skyrim\Pathfinding\NavMeshInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\NavMeshInfo\PrecomputedNavmeshInfoPath.h">
+      <Filter>Header Files\Skyrim\Pathfinding\NavMeshInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\NavMeshInfo\PrecomputedNavmeshInfoPathMap.h">
+      <Filter>Header Files\Skyrim\Pathfinding\NavMeshInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSPathFinding\BSPrecomputedNavmeshInfoPathMap.h">
+      <Filter>Header Files\Skyrim\BSPathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Obstacle\NavMeshObstacleManager.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Obstacle\NavMeshObstacleTask.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Pathing\Pathfind.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Pathing\PathingSpace.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Pathing\PathingStreamMasterFile.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Pathing</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Searches\NavMeshSearchClosePoint.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Searches</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Searches\NavMeshSearchFitSphere.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Searches</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Pathfinding\Searches\PathingRequestClosestGoal.h">
+      <Filter>Header Files\Skyrim\Pathfinding\Searches</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\TESClassDF.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSAIWorldLocationRef.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSPackageData.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSPackageDataObjectList.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSPackageDataRef.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\PackageTarget.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\TESCondition.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\BGSProcedurePatrol.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\Package.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\PackageDataCustom.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\PackageLocation.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\AI\TESParameters.h">
+      <Filter>Header Files\Skyrim\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSISoundDescriptor.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BGSSoundDescriptor.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSIMusicTrack.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSIMusicType.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSISoundCategory.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSISoundOutputModel.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\BSAudio\BSIReverbType.h">
+      <Filter>Header Files\Skyrim\BSAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\MagicCaster.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Magic\MagicTarget.h">
+      <Filter>Header Files\Skyrim\Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Animation\BShkbAnimationGraph.h">
+      <Filter>Header Files\Skyrim\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Systems\012E32E8.h">
+      <Filter>Header Files\Skyrim\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\TempEffects\ShaderReferenceEffect.h">
+      <Filter>Header Files\Skyrim\TempEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Skyrim\Systems\GameTime.h">
+      <Filter>Header Files\Skyrim\Systems</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\Skyrim\BSScript\BSScriptNativeFunctionDef.inl">
+      <Filter>Header Files\Skyrim\BSScript</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="dump_rtti_TESV_1_09_32.txt" />
+    <Text Include="dump_functions_TESV_1_09_32.txt" />
+    <Text Include="CK_Strings.txt" />
+  </ItemGroup>
+</Project>

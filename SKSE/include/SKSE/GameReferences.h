@@ -1,0 +1,21 @@
+#pragma once
+
+#include <Skyrim.h>
+#include <Skyrim/TESForms/World/TESObjectREFR.h>
+#include <Skyrim/TESForms/World/Actor.h>
+#include <Skyrim/TESForms/World/Character.h>
+#include <Skyrim/TESForms/World/PlayerCharacter.h>
+#include <Skyrim/TESForms/World/Explosion.h>
+#include <Skyrim/TESForms/World/ChainExplosion.h>
+#include <Skyrim/TESForms/World/Hazard.h>
+#include <Skyrim/TESForms/World/Projectile.h>
+#include <Skyrim/TESForms/World/BarrierProjectile.h>
+#include <Skyrim/TESForms/World/BeamProjectile.h>
+#include <Skyrim/TESForms/World/ConeProjectile.h>
+#include <Skyrim/TESForms/World/FlameProjectile.h>
+#include <Skyrim/TESForms/World/GrenadeProjectile.h>
+#include <Skyrim/TESForms/World/MissileProjectile.h>
+#include <Skyrim/TESForms/World/ArrowProjectile.h>
+#include <Skyrim/TESForms/World/Components/ActorProcessManager.h>
+#include <Skyrim/TESForms/World/Components/DetectionState.h>
+#include <Skyrim/TESForms/World/Components/ActorKnowledge.h>
