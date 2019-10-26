@@ -17,10 +17,10 @@ extern BGSArtObject* art;
 //--------------------------------------------------------------------------------------------
 
 typedef UInt32(*_UpdateModelSkin)(NiNode*, NiColorA**);
-const static _UpdateModelSkin UpdateModelSkin = (_UpdateModelSkin)0x005A9810; // Applies tint to ShaderType 5 nodes
+const static _UpdateModelSkin UpdateModelSkin = reinterpret_cast<_UpdateModelSkin>(0x005A9810); // Applies tint to ShaderType 5 nodes
 
 typedef UInt32(*_UpdateModelHair)(NiNode*, NiColorA**);
-const static _UpdateModelHair UpdateModelHair = (_UpdateModelHair)0x005A9890; // Applies tint to ShaderType 6 nodes
+const static _UpdateModelHair UpdateModelHair = reinterpret_cast<_UpdateModelHair>(0x005A9890); // Applies tint to ShaderType 6 nodes
 
 //--------------------------------------------------------------------------------------------
 
@@ -138,11 +138,11 @@ std::vector<SInt32> GetGameStartDate()
 		SInt32 currentYear = g_gameYear->value;
 		float  daysElapsed = g_daysElapsed->value;
 
-		SInt32 firstYear = currentYear - (SInt32)(daysElapsed / 365);
-		SInt32 firstMonth = currentMonth - (SInt32)((fmodf(daysElapsed, 365) / singleton->DAYS_IN_MONTH[currentMonth]));
-
-		SInt32 dayOffset = fmodf(fmodf(daysElapsed, 365), 30) / 1;
+		auto firstYear = currentYear - static_cast<SInt32>(daysElapsed / 365);
+		auto firstMonth = currentMonth - static_cast<SInt32>((fmodf(daysElapsed, 365) / singleton->DAYS_IN_MONTH[currentMonth]));
+		auto dayOffset = static_cast<SInt32>(fmodf(fmodf(daysElapsed, 365), 30) / 1);
 		SInt32 firstDay = currentDay - dayOffset;
+		
 		if (firstDay < 0)
 		{
 			firstDay += singleton->DAYS_IN_MONTH[firstMonth];
@@ -191,11 +191,11 @@ void PO3_SKSEFunctions::GetHairColor(Actor* thisActor, BGSColorForm* color)
 		auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 		if (lightingShader)
 		{
-			auto material = (BSLightingShaderMaterial*)lightingShader->material;
+			auto material = lightingShader->material;
 
 			if (material && material->GetShaderType() == BSShaderMaterial::kShaderType_HairTint)
 			{
-				auto tintedMaterial = (BSTintedShaderMaterial*)material;
+				auto tintedMaterial = static_cast<BSTintedShaderMaterial*>(material);
 				NiColor tintColor = tintedMaterial->tintColor;
 
 				color->color.red = tintColor.r * 255;
@@ -264,11 +264,11 @@ void PO3_SKSEFunctions::GetSkinColor(Actor* thisActor, BGSColorForm* color)
 			auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 			if (lightingShader)
 			{
-				auto material = (BSLightingShaderMaterial*)lightingShader->material;
+				auto material = lightingShader->material;
 
 				if (material && material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint)
 				{
-					auto tintedMaterial = (BSTintedShaderMaterial*)material;
+					auto tintedMaterial = static_cast<BSTintedShaderMaterial*>(material);
 					NiColor tintColor = tintedMaterial->tintColor;
 
 					color->color.red = tintColor.r * 255;
@@ -1492,7 +1492,7 @@ VMArray<Actor*> PO3_SKSEFunctions::GetActorsByProcessingLevel(UInt32 level)
 		{
 			LookupREFRByHandle(refHandle, refPtr);
 
-			auto actor = static_cast<Actor*>((TESObjectREFR*)refPtr);
+			auto actor = niptr_cast<Actor>(refPtr);
 
 			if (actor)
 			{
@@ -1510,14 +1510,14 @@ VMArray<Actor*> PO3_SKSEFunctions::GetActorsByProcessingLevel(UInt32 level)
 
 float PO3_SKSEFunctions::GetLightRadius(TESObjectLIGH* thisLight)
 {
-	return (thisLight) ? float(thisLight->unk78.radius) : 0.0;
+	return (thisLight) ? static_cast<float>(thisLight->unk78.radius) : 0.0;
 }
 
 void PO3_SKSEFunctions::SetLightRadius(TESObjectLIGH* thisLight, float radius)
 {
 	if (thisLight)
 	{
-		thisLight->unk78.radius = (UInt32)radius;
+		thisLight->unk78.radius = static_cast<UInt32>(radius);
 	}
 }
 
@@ -1538,7 +1538,7 @@ BGSColorForm* PO3_SKSEFunctions::GetLightColor(TESObjectLIGH* thisLight)
 {
 	if (thisLight)
 	{
-		auto colorForm = static_cast<BGSColorForm*>(TESForm::CreateEmptyForm(FormType::ColorForm));
+		auto colorForm = DYNAMIC_CAST<BGSColorForm*>(TESForm::CreateEmptyForm(FormType::ColorForm));
 
 		if (colorForm)
 		{
@@ -1613,19 +1613,19 @@ void PO3_SKSEFunctions::SetLightType(TESObjectLIGH* thisLight, UInt32 lightType)
 	switch (lightType)
 	{
 	case 1:
-		flags = flags & ~TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeHemiShadow;
+		flags = flags & ~(TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeHemiShadow);
 		break;
 	case 2:
-		flags = flags & ~TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeOmni;
+		flags = flags & ~(TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeOmni);
 		break;
 	case 3:
-		flags = flags & ~TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeOmniShadow;
+		flags = flags & ~(TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeOmniShadow);
 		break;
 	case 4:
-		flags = flags & ~TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeSpot;
+		flags = flags & ~(TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeSpot);
 		break;
 	case 5:
-		flags = flags & ~TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeSpotShadow;
+		flags = flags & ~(TESObjectLIGH::kFlags_Type | TESObjectLIGH::kFlag_TypeSpotShadow);
 		break;
 	default:
 		return;
@@ -2278,7 +2278,7 @@ VMArray<TESEffectShader*> PO3_SKSEFunctions::GetAllEffectShaders(TESObjectREFR* 
 	if (thisRef)
 	{
 		auto singleton = Unknown012E32E8::GetSingleton();
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 
 		singleton->activeEffectShaderLock.Lock();
 		for (auto& shaderReferenceEffect : singleton->activeEffectShaders)
@@ -2288,9 +2288,9 @@ VMArray<TESEffectShader*> PO3_SKSEFunctions::GetAllEffectShaders(TESObjectREFR* 
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, ref);
+			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
 
-			if (!ref || thisRef != (TESObjectREFR*)ref)
+			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
 			{
 				continue;
 			}
@@ -2313,7 +2313,7 @@ UInt32 PO3_SKSEFunctions::HasEffectShader(TESObjectREFR* thisRef, TESEffectShade
 	if (thisRef && effectShader)
 	{
 		auto singleton = Unknown012E32E8::GetSingleton();
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 
 		singleton->activeEffectShaderLock.Lock();
 		for (auto& shaderReferenceEffect : singleton->activeEffectShaders)
@@ -2323,9 +2323,9 @@ UInt32 PO3_SKSEFunctions::HasEffectShader(TESObjectREFR* thisRef, TESEffectShade
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, ref);
+			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
 
-			if (!ref || thisRef != (TESObjectREFR*)ref)
+			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
 			{
 				continue;
 			}
@@ -2349,7 +2349,7 @@ VMArray<BGSArtObject*> PO3_SKSEFunctions::GetAllArtObjects(TESObjectREFR* thisRe
 
 	if (thisRef)
 	{
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 		auto singleton = Unknown012E32E8::GetSingleton();
 
 		singleton->activeEffectShaderLock.Lock();
@@ -2360,9 +2360,9 @@ VMArray<BGSArtObject*> PO3_SKSEFunctions::GetAllArtObjects(TESObjectREFR* thisRe
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, ref);
+			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
 
-			if (!ref || thisRef != (TESObjectREFR*)ref)
+			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
 			{
 				continue;
 			}
@@ -2384,7 +2384,7 @@ UInt32 PO3_SKSEFunctions::HasArtObject(TESObjectREFR* thisRef, BGSArtObject* art
 
 	if (thisRef && artObject)
 	{
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 		auto singleton = Unknown012E32E8::GetSingleton();
 
 		singleton->activeEffectShaderLock.Lock();
@@ -2395,9 +2395,9 @@ UInt32 PO3_SKSEFunctions::HasArtObject(TESObjectREFR* thisRef, BGSArtObject* art
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, ref);
+			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
 
-			if (!ref || thisRef != (TESObjectREFR*)ref)
+			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
 			{
 				continue;
 			}
@@ -2429,11 +2429,11 @@ Actor* PO3_SKSEFunctions::GetActorCause(TESObjectREFR* thisRef)
 
 	if (thisRef)
 	{
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 		
-		LookupREFRByHandle(*thisRef->GetActorCause(), ref);
+		LookupREFRByHandle(*thisRef->GetActorCause(), refPtr);
 
-		actor = static_cast<Actor*>((TESObjectREFR*)ref);
+		actor = niptr_cast<Actor>(refPtr);;
 
 		if (actor)
 		{
@@ -2449,20 +2449,20 @@ Actor* PO3_SKSEFunctions::GetClosestActorFromRef(TESObjectREFR* thisRef, float r
 	if (thisRef)
 	{		
 		auto squaredRadius = radius * radius;
-		auto closestDistance = FLT_MAX;
+		auto shortestDistance = std::numeric_limits<float>::max();
 
 		auto originPos = thisRef->pos;
 		
 		std::map<float, Actor*> map;		
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 	
 		auto singleton = Unknown012E32E8::GetSingleton();
 
 		for (auto& refHandle : singleton->actorsHigh)
 		{
-			LookupREFRByHandle(refHandle, ref);
+			LookupREFRByHandle(refHandle, refPtr);
 
-			auto actor = static_cast<Actor*>((TESObjectREFR*)ref);
+			auto actor = niptr_cast<Actor>(refPtr);
 
 			if (!actor || actor == thisRef)
 			{
@@ -2478,9 +2478,9 @@ Actor* PO3_SKSEFunctions::GetClosestActorFromRef(TESObjectREFR* thisRef, float r
 			
 			map.try_emplace(distance, actor);
 
-			if (distance < closestDistance)
+			if (distance < shortestDistance)
 			{
-				closestDistance = distance;
+				shortestDistance = distance;
 			}
 		}
 
@@ -2492,14 +2492,14 @@ Actor* PO3_SKSEFunctions::GetClosestActorFromRef(TESObjectREFR* thisRef, float r
 			{
 				map.try_emplace(distance, g_thePlayer);
 
-				if (distance < closestDistance)
+				if (distance < shortestDistance)
 				{
-					closestDistance = distance;
+					shortestDistance = distance;
 				}
 			}
 		}
 
-		return map.find(closestDistance)->second;
+		return map.find(shortestDistance)->second;
 	}
 
 	return nullptr;
@@ -2514,7 +2514,7 @@ Actor* PO3_SKSEFunctions::GetRandomActorFromRef(TESObjectREFR* thisRef, float ra
 		auto originPos = thisRef->pos;
 
 		std::vector<Actor*> vec;
-		TESObjectREFRPtr ref;
+		TESObjectREFRPtr refPtr;
 
 		auto singleton = Unknown012E32E8::GetSingleton();
 
@@ -2522,9 +2522,9 @@ Actor* PO3_SKSEFunctions::GetRandomActorFromRef(TESObjectREFR* thisRef, float ra
 
 		for (auto& refHandle : singleton->actorsHigh)
 		{
-			LookupREFRByHandle(refHandle, ref);
+			LookupREFRByHandle(refHandle, refPtr);
 
-			auto actor = static_cast<Actor*>((TESObjectREFR*)ref);
+			auto actor = niptr_cast<Actor>(refPtr);
 
 			if (!actor || actor == thisRef)
 			{

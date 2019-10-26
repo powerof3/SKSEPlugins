@@ -148,7 +148,7 @@ namespace BSTaskPool_Hook //runs very frame but only if new actors are added to 
 			{			
 				LookupREFRByHandle(refHandle, refPtr);
 
-				actor = static_cast<Actor*>((TESObjectREFR *)refPtr);
+				actor = niptr_cast<Actor>(refPtr);
 
 				if (actor)
 				{
@@ -176,7 +176,7 @@ namespace BSTaskPool_Hook //runs very frame but only if new actors are added to 
 
 	void Apply()
 	{
-		WriteRelJump(0x006910FB, (UInt32)&Outer); //bstaskpool
+		WriteRelJump(0x006910FB, reinterpret_cast<UInt32>(&Outer)); //bstaskpool
 	}
 }
 

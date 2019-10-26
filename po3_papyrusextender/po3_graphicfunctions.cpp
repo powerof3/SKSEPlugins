@@ -22,11 +22,11 @@ void SetShaderPropertyRGBTint(NiGeometry * geometry)
 	auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 	if (lightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
+		auto material = lightingShader->material;
 
 		if (material && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen))
 		{
-			auto tintedMaterial = (BSTintedShaderMaterial *)CreateShaderMaterial(BSShaderMaterial::kShaderType_FaceGenRGBTint);
+			auto tintedMaterial = static_cast<BSTintedShaderMaterial *>(CreateShaderMaterial(BSShaderMaterial::kShaderType_FaceGenRGBTint));
 			tintedMaterial->CopyFrom(material);
 			lightingShader->SetFlags(0x0A, false);
 			lightingShader->SetFlags(0x15, true);
@@ -52,7 +52,7 @@ void SetShaderPropertyAlpha(NiGeometry * geometry, float alpha, bool onlySkin)
 	auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 	if (lightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
+		auto material = lightingShader->material;
 
 		if (material)
 		{
@@ -126,7 +126,7 @@ void ReplaceTextureSet(NiGeometry * geometry, BGSTextureSet * sourceTXST, BGSTex
 	auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 	if (lightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
+		auto material = lightingShader->material;
 
 		if (material)
 		{
@@ -200,7 +200,7 @@ void ReplaceSkinTXST(NiGeometry * geometry, BGSTextureSet * TXST, SInt32 texture
 	auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 	if (lightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
+		auto material = lightingShader->material;
 
 		if (material && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint) || (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen))
 		{
@@ -297,12 +297,12 @@ void SetShaderPropertyMLP(NiGeometry * geometry, NiGeometry * templateGeometry)
 
 	if (lightingShader && templateLightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
-		auto templateMaterial = (BSLightingShaderMaterialMultiLayerParallax *)templateLightingShader->material;
+		auto material = lightingShader->material;
+		auto templateMaterial = static_cast<BSLightingShaderMaterialMultiLayerParallax *>(templateLightingShader->material);
 
 		if (material && templateMaterial && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen || material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint))
 		{
-			auto newMaterial = (BSLightingShaderMaterialMultiLayerParallax*)CreateShaderMaterial(BSShaderMaterial::kShaderType_MultilayerParallax);
+			auto newMaterial = static_cast<BSLightingShaderMaterialMultiLayerParallax *>(CreateShaderMaterial(BSShaderMaterial::kShaderType_MultilayerParallax));
 
 			newMaterial->CopyFrom(templateMaterial);
 
@@ -477,7 +477,7 @@ SInt32 GetShaderPropertyType(NiGeometry * geometry)
 	auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 	if (lightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
+		auto material = lightingShader->material;
 
 		if (material)
 		{
@@ -504,7 +504,7 @@ UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry)
 	auto lightingShader = ni_cast(shaderProperty, BSLightingShaderProperty);
 	if (lightingShader)
 	{
-		auto material = (BSLightingShaderMaterial *)lightingShader->material;
+		auto material = lightingShader->material;
 
 		if (material)
 		{
