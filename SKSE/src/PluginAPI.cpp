@@ -32,7 +32,7 @@ struct PluginInfo
 
 	UInt32			infoVersion;
 	const char *	name;
-	float		    version;
+	UInt32			version;
 };
 
 
@@ -157,7 +157,7 @@ void SKSEPlugin::SetName(const char* name)
 	thePluginInfo->name = name;
 }
 
-void SKSEPlugin::SetVersion(float version)
+void SKSEPlugin::SetVersion(UInt32 version)
 {
 	thePluginInfo->version = version;
 }

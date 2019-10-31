@@ -24,7 +24,7 @@ void SetShaderPropertyRGBTint(NiGeometry * geometry)
 	{
 		auto material = lightingShader->material;
 
-		if (material && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen))
+		if (material && material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen)
 		{
 			auto tintedMaterial = static_cast<BSTintedShaderMaterial *>(CreateShaderMaterial(BSShaderMaterial::kShaderType_FaceGenRGBTint));
 			tintedMaterial->CopyFrom(material);
@@ -58,7 +58,7 @@ void SetShaderPropertyAlpha(NiGeometry * geometry, float alpha, bool onlySkin)
 		{
 			if (onlySkin)
 			{
-				if ((material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint) || (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen))
+				if (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint || material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen)
 				{
 					material->alpha = alpha;
 				}
@@ -130,7 +130,7 @@ void ReplaceTextureSet(NiGeometry * geometry, BGSTextureSet * sourceTXST, BGSTex
 
 		if (material)
 		{
-			std::string sourcePath = (material->textureSet)->GetTexturePath(0);
+			std::string sourcePath = material->textureSet->GetTexturePath(0);
 			std::string targetPath = sourceTXST->GetTexturePath(0);
 
 			//making everything lowercase
@@ -138,8 +138,8 @@ void ReplaceTextureSet(NiGeometry * geometry, BGSTextureSet * sourceTXST, BGSTex
 			std::transform(targetPath.begin(), targetPath.end(), targetPath.begin(), ::tolower);
 
 			//CK texturesets start without "textures\" path while vanilla nifs always start with it.	
-			size_t data_pos = sourcePath.find("data\\textures\\", 0, 14);
-			size_t txt_pos = sourcePath.find("textures\\", 0, 9);
+			size_t data_pos = sourcePath.find(R"(data\textures\)", 0, 14);
+			size_t txt_pos = sourcePath.find(R"(textures\)", 0, 9);
 
 			if (data_pos != std::string::npos)
 			{
@@ -202,7 +202,7 @@ void ReplaceSkinTXST(NiGeometry * geometry, BGSTextureSet * TXST, SInt32 texture
 	{
 		auto material = lightingShader->material;
 
-		if (material && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint) || (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen))
+		if (material && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint || material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen))
 		{
 			if (textureType == -1)
 			{
@@ -525,7 +525,7 @@ UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry)
 //color mixing algorithm
 UInt8 colorMix(UInt8 a, UInt8 b, float t) //t is percentage blend
 {
-	return sqrt((1 - t)*pow(b, 2) + t * pow(a, 2));
+	return round(sqrt((1 - t)*pow(b, 2) + t * pow(a, 2)));
 }
 
 //luminance detection algorithm

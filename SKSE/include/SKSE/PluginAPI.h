@@ -416,7 +416,7 @@ public:
 
 protected:
 	void SetName(const char* name);
-	void SetVersion(float version);
+	void SetVersion(UInt32 version);
 
 	bool Requires(SKSEVersion version) const;
 	bool Requires(SKSEScaleformInterface::Version version) const;

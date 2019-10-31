@@ -24,12 +24,12 @@ public:
 
 	// @members
 	//void				** _vtbl;	// 00 - 0108DBD0
-	UInt32				unk04;		// 04 - 0
-	UInt8				unk08;		// 08 - 50
-	UInt8				unk09;		// 09 - 0
-	UInt16				unk0A;		// 0A - 0
-	float				unk0C;		// 0C - 0
-	UInt32				unk10;		// 10 - 0
+	UInt32				unk04;		// 04
+	UInt8				unk08;		// 08
+	UInt8				unk09;		// 09
+	UInt16				unk0A;		// 0A
+	float				unk0C;		// 0C
+	UInt32				unk10;		// 10
 	BSTArray<void *>	unk14;		// 14
 	BSTArray<void *>	unk20;		// 20
 	UInt32				unk2C;		// 2C

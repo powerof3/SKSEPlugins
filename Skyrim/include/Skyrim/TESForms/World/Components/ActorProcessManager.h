@@ -127,7 +127,7 @@ public:
 	UInt32		unk150;			// 150
 	UInt32		unk154;			// 154
 	UInt32		unk158;			// 158
-	void		* characterController;	// 15C - hkpCharacterProxy?
+	void		* unk15C;		// 15C - hkpCharacterProxy?
 	void		* unk160;		// 160
 	UInt32		unk164;			// 164
 	UInt32		unk168;			// 168
@@ -150,7 +150,7 @@ public:
 	UInt32		unk1AC;			// 1AC
 	UInt32		unk1B0;			// 1B0
 	float		actorAlpha;		// 1B4 - 1.0f
-	float		actorRefraction;// 1B8
+	float		actorRefraction;// 1B8 - 0.0f
 	// More?...
 
 	DEFINE_MEMBER_FN(ctor, MiddleProcess *, 0x0072E600);
@@ -317,7 +317,7 @@ public:
 	UInt32					unk2C;								// 2C
 	void					* actorValues;						// 30
 	UInt32					unk34[(0x54 - 0x34) >> 2];			// 34
-	float					timeOfDeath;						// 54 - GetTimeDead = (GameDaysPassed*24) - timeOfDeath //float is GameDaysPassed*24 value
+	float					timeOfDeath;						// 54 - GetTimeDead = (GameDaysPassed*24) - timeOfDeath
 	UInt32					unk58;								// 58
 	BSTArray<void *>		unk5C;								// 5C
 	TESForm					* equippedObject[2];				// 68

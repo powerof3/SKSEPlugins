@@ -7,5 +7,4 @@
 template <typename T_key, typename T_data>
 class NiTPointerMap : NiTMap <T_key, T_data>
 {
-public:
 };

@@ -106,7 +106,7 @@ public:
 	virtual void			Unk_68(void) override;										// 006C4110
 	virtual void			Unk_69(void) override;										// 006BA6A0
 	virtual void			Unk_6A(void) override;										// 006C54B0
-	virtual void			Unk_6C(NiNode*, bool) override;								// 6C 006C20D0
+	virtual void			Unk_6C(UInt32 unk1, UInt32 unk2) override;					// 006C20D0
 	virtual void			Unk_72(void) override;										// 006C7340
 	virtual NiPoint3 *		GetBoundLeftFrontBottom(NiPoint3 *) const;					// 006A9590
 	virtual NiPoint3 *		GetBoundRightBackTop(NiPoint3 *) const;						// 006A9630
@@ -246,7 +246,7 @@ public:
 	virtual bool	Unk_BB(void);													// BB 0092D110 { return false; }
 	virtual void	Unk_BC(UInt32 arg);												// BC 00588F30 { return; }
 	virtual bool	Unk_BD(void);													// BD 0092D110 { return false; } - called 2 times when activate
-	virtual void	Unk_BE(UInt32 arg);												// BE 00588F30 { return; }
+	virtual void	Unk_BE(UInt32 arg);													// BE 00588F30 { return; }
 	virtual void	Unk_BF(UInt32 arg1, UInt32 arg2);								// BF 004D43E0 { return; }
 	virtual void	Unk_C0(UInt32 arg);												// C0 00588F30 { return; }
 	virtual void	Unk_C1(void);													// C1 006BEC40 - called when weapon swing, item drop
@@ -315,7 +315,7 @@ public:
 	virtual void	Unk_100(void);													// 006AA260
 	virtual void	Unk_101(void);													// 006C50E0 { return; }
 	virtual bool	Unk_102(void);													// 0092D110 { return false; }
-	virtual void	KillIfNoHealth(Actor* attacker, float currentHealth);			// 103 006E4700 // checks an actor's health; if below zero, kills them
+	virtual void	Unk_103(void);													// 006E4700
 	virtual void	Unk_104(void);													// 006E1130
 	virtual bool	Unk_105(void);													// 0092D110 { return false; }
 	virtual void	Unk_106(void);													// 006C50F0
@@ -451,7 +451,7 @@ public:
 	DEFINE_MEMBER_FN_const(GetGoldAmount, UInt32, 0x006A8190);
 
 	DEFINE_MEMBER_FN(GetDetectionLevel, SInt32, 0x006AE830, Actor *target, UInt32 flag);	// return -1000 if not detected
-
+	
 	///<summary>Checks to see if this actor is currently being affected by a Magic Effect with the given Keyword.</summary>
 	bool HasMagicEffectWithKeyword(const BGSKeyword *keyword) const		// 008DA550
 	{
@@ -503,6 +503,7 @@ public:
 	DEFINE_MEMBER_FN_const(GetSoulSize, UInt32, 0x006E8BC0); // returns ExtraSoul::SoulSize enum
 	DEFINE_MEMBER_FN(GetCurrentPackageInternal, TESPackage*, 0x006A9AD0); 
 	DEFINE_MEMBER_FN(Kill, void, 0x006AC3A0, Actor* killer, float, UInt32, UInt32); // not instantaneous; queues via the BSTaskPool
+	DEFINE_MEMBER_FN(InstantKill, bool, 0x006D3E80); //instantly kills the actor with proper processing 
 
 	/*struct Flags1
 	{
@@ -581,7 +582,7 @@ public:
 	// @members
 	UInt32						flags1;								// 07C
 	UInt32						unk080;								// 080
-	UInt32						criticalStage;						// 084 //used in critical stage?
+	UInt32						criticalStage;						// 084
 	ActorProcessManager			* processManager;					// 088
 	RefHandle					dialogueTargetRefHandle;			// 08C
 	RefHandle					combatTargetRefHandle;				// 090
@@ -610,7 +611,7 @@ public:
 private:
 	DEFINE_MEMBER_FN(ctor, Actor *, 0x006CE4F0);
 
-	DEFINE_MEMBER_FN_const(HasSpell_Impl, bool, 0x006EAF10, SpellItem* spell); //0x006E9130
+	DEFINE_MEMBER_FN_const(HasSpell_Impl, bool, 0x006E9130, SpellItem* spell);
 	DEFINE_MEMBER_FN(EvaluatePackage_Impl, void, 0x006BE790, bool, bool);
 };
 STATIC_ASSERT(offsetof(Actor, addedSpells) == 0xFC);

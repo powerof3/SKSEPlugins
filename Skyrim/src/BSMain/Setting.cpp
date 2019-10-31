@@ -107,7 +107,8 @@ bool Setting::SetString(const char * value)
 
 Setting * GameSettingCollection::Get(const char * name)
 {
-	return items.Get(name);
+	Setting *setting = nullptr;
+	return items.Get(name) ? setting : nullptr;
 }
 
 Setting * GetINISetting(const char * name)

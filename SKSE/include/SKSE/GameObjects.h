@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Skyrim.h>
-#include <Skyrim/TESForms/Gameplay/BGSTextureSet.h>
 #include <Skyrim/TESForms/Gameplay/TESSound.h>
 #include <Skyrim/TESForms/Gameplay/BGSAcousticSpace.h>
 #include <Skyrim/TESForms/Character/BGSIdleMarker.h>

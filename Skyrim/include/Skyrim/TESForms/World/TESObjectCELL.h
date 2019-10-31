@@ -6,7 +6,7 @@
 #include "../../FormComponents/BaseExtraList.h"
 #include "../../BSCore/BSTArray.h"
 #include "../../BSCore/BSSpinLock.h"
-#include "../../BSSystem/BSTSmartPointer.h"
+#include "Skyrim/BSSystem/BSTSmartPointer.h"
 
 class TESNPC;
 class TESFaction;

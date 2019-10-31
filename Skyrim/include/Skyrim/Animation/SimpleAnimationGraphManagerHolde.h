@@ -23,8 +23,8 @@ public:
 
 	// @members
 	//	void	** _vtbl;		// 00   0x010C8664
-	BSTSmartPointer<BSAnimationGraphManager>	graphManager;	// 04
-	BSTSmartPointer<BSIntrusiveRefCounted>		unk10;			// 08
+	void		* unk04;		// 04
+	UInt32		unk08;			// 08
 
 private:
 	DEFINE_MEMBER_FN(ctor, SimpleAnimationGraphManagerHolder*, 0x00651870);

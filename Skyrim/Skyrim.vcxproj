@@ -15,7 +15,6 @@
     <ClCompile Include="src\AI\BGSAttackDataMap.cpp" />
     <ClCompile Include="src\Animation\AnimationClipDataSingleton.cpp" />
     <ClCompile Include="src\Animation\AnimationHandlers.cpp" />
-    <ClCompile Include="src\Animation\BShkbAnimationGraph.cpp" />
     <ClCompile Include="src\BSCore\BSFixedString.cpp" />
     <ClCompile Include="src\BSCore\BSSpinLock.cpp" />
     <ClCompile Include="src\BSCore\BSString.cpp" />
@@ -80,6 +79,7 @@
     <ClCompile Include="src\FormComponents\BGSBipedObjectForm.cpp" />
     <ClCompile Include="src\FormComponents\BGSKeywordForm.cpp" />
     <ClCompile Include="src\FormComponents\BGSPerkRankArray.cpp" />
+    <ClCompile Include="src\FormComponents\Condition.cpp" />
     <ClCompile Include="src\FormComponents\TESContainer.cpp" />
     <ClCompile Include="src\FormComponents\TESForm.cpp" />
     <ClCompile Include="src\FormComponents\TESSpellList.cpp" />
@@ -131,11 +131,11 @@
     <ClCompile Include="src\Sky\Sky.cpp" />
     <ClCompile Include="src\TESForms\Character\BGSBaseAlias.cpp" />
     <ClCompile Include="src\TESForms\Character\BGSEquipSlot.cpp" />
-    <ClCompile Include="src\TESForms\Character\TESNPC.cpp" />
     <ClCompile Include="src\TESForms\Character\BGSLocAlias.cpp" />
     <ClCompile Include="src\TESForms\Character\BGSPerk.cpp" />
     <ClCompile Include="src\TESForms\Character\BGSRefAlias.cpp" />
     <ClCompile Include="src\TESForms\Character\BGSScene.cpp" />
+    <ClCompile Include="src\TESForms\Character\TESNPC.cpp" />
     <ClCompile Include="src\TESForms\Character\TESPackage.cpp" />
     <ClCompile Include="src\TESForms\Character\TESQuest.cpp" />
     <ClCompile Include="src\TESForms\Character\TESRace.cpp" />
@@ -180,7 +180,6 @@
     <ClInclude Include="include\Skyrim\Animation\BGSGamebryoSequenceGeneratorHolderSingleton.h" />
     <ClInclude Include="include\Skyrim\Animation\BSAnimationGraphChannel.h" />
     <ClInclude Include="include\Skyrim\Animation\BSAnimationGraphManager.h" />
-    <ClInclude Include="include\Skyrim\Animation\BShkbAnimationGraph.h" />
     <ClInclude Include="include\Skyrim\Animation\BSResponse.h" />
     <ClInclude Include="include\Skyrim\Animation\BSTAnimationGraphDataChannel.h" />
     <ClInclude Include="include\Skyrim\Animation\IAnimationGraphManagerHolder.h" />
@@ -649,6 +648,7 @@
     <ClInclude Include="include\Skyrim\Menus\UIManager.h" />
     <ClInclude Include="include\Skyrim\Menus\UIMessage.h" />
     <ClInclude Include="include\Skyrim\Menus\UIStringHolder.h" />
+    <ClInclude Include="include\Skyrim\Misc\012E32E8.h" />
     <ClInclude Include="include\Skyrim\Misc\BGSAttachTechniques.h" />
     <ClInclude Include="include\Skyrim\Misc\BGSCollisionSoundManager.h" />
     <ClInclude Include="include\Skyrim\Misc\BGSCombatImpactManager.h" />
@@ -662,6 +662,7 @@
     <ClInclude Include="include\Skyrim\Misc\BGSSceneInfo.h" />
     <ClInclude Include="include\Skyrim\Misc\BipedAnim.h" />
     <ClInclude Include="include\Skyrim\Misc\BGSFootstepManager.h" />
+    <ClInclude Include="include\Skyrim\Misc\GameTime.h" />
     <ClInclude Include="include\Skyrim\Misc\GarbageCollector.h" />
     <ClInclude Include="include\Skyrim\Misc\InventoryChanges.h" />
     <ClInclude Include="include\Skyrim\Misc\LipSynchAnim.h" />
@@ -768,8 +769,6 @@
     <ClInclude Include="include\Skyrim\Sky\Stars.h" />
     <ClInclude Include="include\Skyrim\Sky\Sun.h" />
     <ClInclude Include="include\Skyrim\SpeedTree\BSTreeManager.h" />
-    <ClInclude Include="include\Skyrim\Systems\012E32E8.h" />
-    <ClInclude Include="include\Skyrim\Systems\GameTime.h" />
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffect.h" />
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectGeometryDecal.h" />
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectSimpleDecal.h" />
@@ -945,7 +944,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -969,11 +968,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>$(ProjectName)_d</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -1019,8 +1013,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>$(SolutionDir)install_lib.bat "$(ProjectDir)include" "$(TargetPath)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

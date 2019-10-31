@@ -67,6 +67,7 @@ public:
 	};
 
 
+
 	virtual ~TESForm();														// 00 004522A0
 
 	// @override

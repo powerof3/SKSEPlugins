@@ -5,7 +5,6 @@
 
 class TESForm;
 class ActiveEffect;
-class BGSLocation;
 class TESObjectCELL;
 class TESObjectREFR;
 class Actor;
@@ -23,20 +22,25 @@ struct TESActivateEvent
 
 struct TESActiveEffectApplyRemoveEvent
 {
-	TESObjectREFR*	            caster;			// 00
-	TESObjectREFR*	            target;			// 08
-	UInt16						effectHandle;	// 10
-	bool						apply;			// 12
-	UInt8						pad13;			// 13
-	UInt32						pad14;			// 14
+	TESObjectREFR	* caster;
+	TESObjectREFR	* target;
+	UInt32			unk08;
+	UInt32			unk0C;
+	UInt32			unk10;
+	UInt32			unk14;
+	UInt32			unk18;			// Flags?
+	UInt32			unk1C;			// Use effect2 if this is 1
+	TESForm			* source;		// Not really sure what this is, probably the extra form
+	ActiveEffect	* effect1;
+	ActiveEffect	* effect2;
 };
 
 // 0C
 struct TESActorLocationChangeEvent
 {
-	Actor * ref; 
-	BGSLocation * from;
-	BGSLocation * to;
+	UInt32 unk00;
+	UInt32 unk01;
+	UInt32 unk02;
 };
 
 struct TESBookReadEvent
@@ -59,7 +63,6 @@ struct TESCellReadyToApplyDecalsEvent
 	+0000 01 class `anonymous namespace'::DecalApplier | 01244C0C
 	-->	+0000 00 class BSTEventSink<struct TESCellReadyToApplyDecalsEvent> | 01244288
 	*/
-	TESObjectCELL* unk00;
 };
 
 // 04
@@ -72,9 +75,9 @@ struct TESCellFullyLoadedEvent
 // 0C
 struct TESCombatEvent
 {
-	Actor* subject;     // 00
-	Actor* target;      // 04 // The target of the subject actor's scrutiny and hostility; the person the subject is/was searching for.
-	SInt32 combatState; // 08
+	Actor	* caster;
+	Actor	* target;
+	UInt32	state;
 };
 
 // 18
@@ -90,86 +93,36 @@ struct TESContainerChangedEvent
 
 struct TESDeathEvent
 {
-	//
-	// This fires TWICE for an actor's death: once when they are fated to die, and 
-	// again when they're actually dead; this is the distinction between Papyrus 
-	// OnDying and OnDeath. The (isDead) bool indicates whether the actor is dying 
-	// (false) or dead (true). Calls to victim->IsDead(0) should return the same 
-	// result.
-	//
-	TESObjectREFR* victim; // 00
-	TESObjectREFR* killer; // 04
-	bool           isDead; // 08
 };
 
 
 struct TESDestructionStageChangedEvent
 {
-	TESObjectREFR* ref;      // 00
-	SInt32         oldStage; // 04
-	SInt32         newStage; // 08
 };
 
 struct TESEnterBleedoutEvent
 {
-	TESObjectREFR* actor;
 };
 
 // 10
 struct TESEquipEvent
 {
-	//
-	// Fired for unequipping or equipping items. When switching from one item to 
-	// another, BSTEvents are fired in order (unequip the old; equip the new). 
-	// Expect these to fire when entering an area for the first time, as actors 
-	// are apparently considered to equip their armor at that moment.
-	//
-	// Looting an equipped item off of a corpse sends an unequip event for that 
-	// corpse. Killing an actor who has spells equipped and drawn will send un-
-	// equip events for their spells.
-	//
-	// Furthermore, this fires when "using" any item in an inventory or container, 
-	// including books, ingredients, and misc-items; using them fires an equip 
-	// event but no matching unequip event. Be sure to check the item type when 
-	// listening to this event.
-	//
-	// TODO: Does this fire when using a spell tome stored in another container?
-	//
-	enum Type : UInt8
-	{
-		kType_Unequip = 0,
-		kType_Equip = 1,
-	};
-	TESObjectREFR* actor;
-	FormID sourceID; // 04 // the weapon, armor, or spell that has been (un)equipped
-	UInt32 unk08;
-	UInt16 unk0C;
-	Type   type; // 0E
-	UInt8  pad0F;
+	UInt32	unk_00;
+	UInt32	unk_01;
+	UInt32	unk_02;
+	UInt32	unk_03;
 };
 
 struct TESFormDeleteEvent
 {
-	FormID refrID; // 00
 };
 
 struct TESFurnitureEvent
 {
-	enum Type : UInt32
-	{
-		kType_Enter = 0,
-		kType_Exit = 1,
-	};
-	TESObjectREFR* actor;     // 00
-	TESObjectREFR* furniture; // 04
-	Type           type;      // 08
-	//
 };
 
 struct TESGrabReleaseEvent
-{ // Fires when the player starts or stops Z-keying an object; doesn't fire for telekinesis
-	TESObjectREFR* ref;        // 00 // grabbed/released ref
-	bool           isGrabbing; // 04 // whether grabbing or releasing
+{
 };
 
 struct TESHitEvent
@@ -202,7 +155,6 @@ struct TESLoadGameEvent
 
 struct TESLockChangedEvent
 {
-	TESObjectREFR* ref; // 00
 };
 
 // 0C
@@ -210,7 +162,7 @@ struct TESMagicEffectApplyEvent
 {
 	TESObjectREFR	* target;
 	TESObjectREFR	* caster;
-	FormID          effectID; // 08
+	UInt32          unk08;
 };
 
 struct TESMagicWardHitEvent
@@ -224,7 +176,6 @@ struct TESMoveAttachDetachEvent
 struct TESObjectLoadedEvent
 {
 	FormID	formID;
-	bool    loaded;
 };
 
 struct TESObjectREFRTranslationEvent
@@ -233,14 +184,6 @@ struct TESObjectREFRTranslationEvent
 
 struct TESOpenCloseEvent
 {
-	enum Type : UInt8
-	{
-		kType_Close = 0,
-		kType_Open = 1,
-	};
-	TESObjectREFR* door; // 00
-	TESObjectREFR* whoInteracted; // 04
-	Type           type; // 08
 };
 
 struct TESPackageEvent
@@ -269,10 +212,6 @@ struct TESQuestStageItemDoneEvent
 
 struct TESQuestStartStopEvent
 {
-	UInt32 questFormID; // quest formID
-	bool   unk04; // 04 // start/stop; not sure what value has what meaning
-	UInt8  unk05; // 05
-	UInt16 pad06;
 };
 
 struct TESResetEvent

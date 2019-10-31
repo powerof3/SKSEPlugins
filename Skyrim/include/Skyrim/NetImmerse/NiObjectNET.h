@@ -39,7 +39,7 @@ public:
 	bool RemoveExtraData(NiExtraData * extraData);
 	SInt32 GetIndexOf(NiExtraData * extraData);
 	NiExtraData * GetExtraData(const char * name);
-//private:
+private:
 	bool InsertExtraData(NiExtraData* extraData);
 	void DeleteExtraData(UInt16 usExtraDataIndex);
 

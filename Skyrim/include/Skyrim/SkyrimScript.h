@@ -131,10 +131,8 @@ namespace SkyrimScript
 		virtual void	Unk_04(void);			// 008AF460
 		virtual UInt32	GetType(void) = 0;		// (pure)
 		virtual void	Unk_06(void);			// 008AF5B0
-		
 		// @members
 		// void **	_vtbl		// 00 - 010EA1DC
-		UInt32 stackID;	        // 0C
 	};
 
 	/*==============================================================================

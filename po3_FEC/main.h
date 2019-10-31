@@ -19,6 +19,6 @@
 
 #include <shlobj.h>
 
-#include "Skyrim/Systems/012E32E8.h"
+#include "Skyrim/Misc/012E32E8.h"
 
 #include "Detection.h"

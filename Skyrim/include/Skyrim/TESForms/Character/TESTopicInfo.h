@@ -89,8 +89,8 @@ public:
 	TESTopic		* topic;			// 14
 	TESTopicInfo	* sharesInfo;		// 18 - DNAM - share response data from info?
 	Condition		conditions;			// 1C - CTDA
-	UInt16			unk20;				// 20 - init'd to FFFF
-	UInt8			unk22;				// 22
+	UInt16			index;				// 20 - init'd to FFFF
+	bool			unk22;				// 22
 	UInt8			favorLevel;			// 23 - CNAM
 	UInt16			dialogFlags;		// 24 - ENAM - Response flags
 	UInt16			hoursUntilReset;	// 26

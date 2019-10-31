@@ -11,9 +11,9 @@ public:
 	virtual ~BSShaderMaterial();
 	virtual BSShaderMaterial * Create(void);
 	virtual void Copy(BSShaderMaterial * source); // Must be same type
-	virtual bool DoIsCopy(const BSShaderMaterial *source);//Unk_03(void * unk1)
+	virtual bool DoIsCopy(const BSShaderMaterial *source);
 	virtual SInt32 Unk_04(void * unk1);
-	virtual BSShaderMaterial *GetDefault();// void * Unk_05(void)
+	virtual BSShaderMaterial *GetDefault();
 	virtual UInt32 GetShaderType(void);
 	virtual UInt32 Unk_07(void);	// Always seems to be 2
 
@@ -101,7 +101,7 @@ public:
 	UInt32	unk4C;				// 4C inited to 3
 	BSTextureSetPtr	textureSet;		// 50 inited to 0
 	float	alpha;				// 54 inited to 1.0
-	float	refraction;// unk58;// 58 inited to 0
+	float	refraction;				// 58 inited to 0
 	float	glossiness;			// 5C inited to 1.0
 	float	specularStrength;	// 60 inited to 1.0
 	float	lightingEffect1;	// 64 inited to 0
@@ -125,6 +125,7 @@ public:
 
 	//static BSMaskedShaderMaterial * CreateFromLightingShader(BSLightingShaderMaterial * source);
 };
+STATIC_ASSERT(offsetof(BSMaskedShaderMaterial, renderedTexture) == 0x70);
 
 // vtbl - 01154204
 class BSTintedShaderMaterial : public BSLightingShaderMaterial
@@ -137,6 +138,9 @@ public:
 	// ctor - C98AB0
 	// copyFrom - C97AC0
 };
+
+typedef BSShaderMaterialBase * (* _CreateShaderMaterial)(UInt32 shaderType);
+extern const _CreateShaderMaterial CreateShaderMaterial;
 
 //NEW CLASSES
 
@@ -183,8 +187,3 @@ public:
 	float fEnvmapScale;
 	NiPoint3 kEyeCenter[2];
 };
-
-typedef BSShaderMaterialBase * (* _CreateShaderMaterial)(UInt32 shaderType);
-extern const _CreateShaderMaterial CreateShaderMaterial;
-
-STATIC_ASSERT(offsetof(BSMaskedShaderMaterial, renderedTexture) == 0x70);

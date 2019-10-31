@@ -94,7 +94,7 @@ public:
 	HUDObject(GFxMovieView *movie);
 	virtual ~HUDObject(void);											// 0085FF10
 
-	virtual void	Update() = 0;										// 00F51EE8 Called per-frame
+	virtual void	Update(void);										// 00F51EE8 Called per-frame
 	virtual bool	Unk_02(void * unk1) { return false; }				// 004091A0 { return false; }
 	virtual void *	Unk_03(void * unk1) { return Impl_Fn03(unk1); }		// 0085F030 { return Impl_Fn03(unk1); }
 	virtual void	Unk_04(void) { return; }							// 006C50E0 { return; }

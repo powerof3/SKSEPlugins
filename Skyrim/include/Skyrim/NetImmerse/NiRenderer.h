@@ -68,7 +68,7 @@ public:
 	UInt32				m_uiRendFlags;					// 39C
 	char				m_acBehavior[32];				// 3A0
 
-	UInt32	            m_kPrePackObjects;				// 3C0 //modified
+	NiTMap<void*,void*>	m_kPrePackObjects;				// 3C0
 	UInt32				unk3D0;							// 3D0
 	UInt32				unk3D4;							// 3D4
 
@@ -105,7 +105,7 @@ public:
 	NiRenderTargetGroup * m_spDefaultRenderTargetGroup; // 628
 	NiRenderTargetGroup * m_pkCurrRenderTargetGroup;	// 62C
 	NiRenderTargetGroup * m_pkCurrOnscreenRenderTargetGroup; // 630
-	NiTPointerMap<HWND, NiRenderTargetGroup*>	m_kOnscreenRenderTargetGroups; // 634 NiTPointerMap<HWND, NiRenderTargetGroupPtr> //modified
+	NiTPointerMap<HWND, NiRenderTargetGroup*>	m_kOnscreenRenderTargetGroups; // 634 NiTPointerMap<HWND, NiRenderTargetGroupPtr>
 	UInt32				m_uiMaxNumRenderTargets;		// 644
 	bool				m_bIndependentBitDepths;		// 648
 	bool				m_bMRTPostPixelShaderBlending;	// 649
@@ -115,8 +115,8 @@ public:
 	UInt32				unk654;							// 654
 	UInt32				unk658;							// 658
 	UInt32				unk65C;							// 65C
-	NiTPointerMap<NiRenderedTexture*, void*>	m_kRenderedTextures;			// 660 NiTPointerMap<NiRenderedTexture*, NiDX9RenderedTextureData*> //modified
-	NiTPointerMap<NiRenderedTexture*, void*>	m_kRenderedCubeMaps;			// 670 NiTPointerMap<NiRenderedCubeMap*, NiDX9RenderedCubeMapData*> //modified
+	NiTPointerMap<NiRenderedTexture*, void*> m_kRenderedTextures;			// 660 NiTPointerMap<NiRenderedTexture*, NiDX9RenderedTextureData*>
+	NiTPointerMap<NiRenderedCubeMap*, void*> m_kRenderedCubeMaps;			// 670 NiTPointerMap<NiRenderedCubeMap*, NiDX9RenderedCubeMapData*>
 	UInt32				unk680;							// 680
 	UInt32				unk684;							// 684
 	UInt32				unk688;							// 688
@@ -164,7 +164,7 @@ public:
 	UInt32				unk858;							// 858
 	UInt32				unk85C;							// 85C
 	UInt32				unk860;							// 860
-	NiTMap<D3DFORMAT, NiPixelFormat*>	m_kDepthStencilFormats; // 864 NiTMap<D3DFormat, NiPixelFormat *> //modified
+	NiTMap<D3DFORMAT, NiPixelFormat *>	m_kDepthStencilFormats; // 864 NiTMap<D3DFormat, NiPixelFormat *>
 	UInt32				unk874;							// 874
 	UInt32				unk878;							// 878
 	UInt32				unk87C;							// 87C

@@ -30,18 +30,16 @@ TESSoulGem::SoulLevel GetSoulLevel(TESSoulGem* a_soulGem, InventoryEntryData* en
 	{
 		return a_soulGem->soulSize;
 	}
-	else
-	{
-		if (entry->extraList)
-		{
-			for (auto& list : *entry->extraList)
-			{
-				auto xSoul = static_cast<ExtraSoul*>(list->GetByType(ExtraDataType::Soul));
 
-				if (xSoul)
-				{
-					return static_cast<TESSoulGem::SoulLevel>(xSoul->count);
-				}
+	if (entry->extraList)
+	{
+		for (auto& list : *entry->extraList)
+		{
+			auto xSoul = static_cast<ExtraSoul*>(list->GetByType(ExtraDataType::Soul));
+
+			if (xSoul)
+			{
+				return static_cast<TESSoulGem::SoulLevel>(xSoul->count);
 			}
 		}
 	}
@@ -51,7 +49,9 @@ TESSoulGem::SoulLevel GetSoulLevel(TESSoulGem* a_soulGem, InventoryEntryData* en
 
 bool VerifyKeywords(TESForm* form, VMArray<BGSKeyword*>* keywords)
 {
-	if (form && keywords->GetSize() > 0)
+	auto size = keywords->GetSize();
+
+	if (size > 0)
 	{
 		auto pKeywords = DYNAMIC_CAST<BGSKeywordForm*>(form);
 
@@ -59,7 +59,7 @@ bool VerifyKeywords(TESForm* form, VMArray<BGSKeyword*>* keywords)
 		{
 			BGSKeyword* keyword = nullptr;
 
-			for (UInt32 k = 0; k < keywords->GetSize(); k++)
+			for (UInt32 k = 0; k < size; k++)
 			{
 				keywords->GetAt(k, keyword);
 
@@ -77,7 +77,7 @@ bool VerifyKeywords(TESForm* form, VMArray<BGSKeyword*>* keywords)
 // navmesh related functions
 float CalcLinearDistance(const NiPoint3& a_lhs, const NiPoint3& a_rhs)
 {
-	return (((a_rhs.x - a_lhs.x) * (a_rhs.x - a_lhs.x)) + ((a_rhs.y - a_lhs.y) * (a_rhs.y - a_lhs.y)) + ((a_rhs.z - a_lhs.z) * (a_rhs.z - a_lhs.z)));
+	return ((a_rhs.x - a_lhs.x) * (a_rhs.x - a_lhs.x)) + ((a_rhs.y - a_lhs.y) * (a_rhs.y - a_lhs.y)) + ((a_rhs.z - a_lhs.z) * (a_rhs.z - a_lhs.z));
 }
 
 void SetPosition(TESObjectREFR* target, NiPoint3 pos)
@@ -142,7 +142,7 @@ std::vector<SInt32> GetGameStartDate()
 		auto firstMonth = currentMonth - static_cast<SInt32>((fmodf(daysElapsed, 365) / singleton->DAYS_IN_MONTH[currentMonth]));
 		auto dayOffset = static_cast<SInt32>(fmodf(fmodf(daysElapsed, 365), 30) / 1);
 		SInt32 firstDay = currentDay - dayOffset;
-		
+
 		if (firstDay < 0)
 		{
 			firstDay += singleton->DAYS_IN_MONTH[firstMonth];
@@ -337,8 +337,7 @@ void PO3_SKSEFunctions::MixColorWithSkinTone(Actor* thisActor, BGSColorForm* col
 		NiGeometry* geometry = GetHeadPartGeometry(thisActor, BGSHeadPart::kTypeFace);
 		SetShaderPropertyRGBTint(geometry); //makes face tintable
 
-		float skinLuminance = 0.0;
-
+		float skinLuminance;
 		if (manualMode)
 		{
 			skinLuminance = percentage;
@@ -588,43 +587,24 @@ void PO3_SKSEFunctions::SetHeadPartAlpha(Actor* thisActor, UInt32 partType, floa
 	g_task->AddTask([thisActor, partType, alpha]()
 	{
 		NiGeometry* geometry = GetHeadPartGeometry(thisActor, partType);
-		SetShaderPropertyAlpha(geometry, alpha, false);
-	});
-}
 
-void PO3_SKSEFunctions::ToggleSkinnedDecalNode(Actor* thisActor, bool disable)
-{
-	if (!thisActor)
-	{
-		return;
-	}
-
-	NiNode* parent = thisActor->GetNiNode();
-
-	if (!parent)
-	{
-		return;
-	}
-
-	g_task->AddTask([parent, disable]()
-	{
-		NiAVObject* object = parent->GetObjectByName("Skinned Decal Node");
-
-		if (object)
+		if (geometry)
 		{
-			if (!disable)
+			if (alpha == 0.0)
 			{
-				object->m_flags &= ~0x01;
+				geometry->m_flags |= 0x01;
+				return;
 			}
 			else
 			{
-				object->m_flags |= 0x01;
+				geometry->m_flags &= ~0x01;
 			}
 		}
+		SetShaderPropertyAlpha(geometry, alpha, false);		
 	});
 }
 
-void PO3_SKSEFunctions::RemoveFaceGenNode(Actor* thisActor)
+void PO3_SKSEFunctions::ToggleChildNode(Actor* thisActor, const BSFixedString& nodeName, bool disable)
 {
 	if (!thisActor)
 	{
@@ -638,21 +618,59 @@ void PO3_SKSEFunctions::RemoveFaceGenNode(Actor* thisActor)
 		return;
 	}
 
-	g_task->AddTask([parent, thisActor]()
-	{
-		NiAVObject* object = thisActor->GetFaceGenNiNode();
+	NiAVObject* child = parent->GetObjectByName(nodeName);
 
-		if (object)
+	if (child)
+	{
+		g_task->AddTask([child, disable]()
 		{
-			parent->RemoveChild(object);
-		}
-	});
+			if (!disable)
+			{
+				child->m_flags &= ~0x01;
+			}
+			else
+			{
+				child->m_flags |= 0x01;
+			}
+		});
+	}
+}
+
+void PO3_SKSEFunctions::RemoveChildNode(Actor* thisActor, const BSFixedString& nodeName)
+{
+	if (!thisActor)
+	{
+		return;
+	}
+
+	NiNode* parent = thisActor->GetNiNode();
+
+	if (!parent)
+	{
+		return;
+	}
+
+	NiAVObject* child = nullptr;
+	if (nodeName == "faceGenNiNodeSkinned")
+	{
+		child = thisActor->GetFaceGenNiNode();
+	}
+	else
+	{
+		child = parent->GetObjectByName(nodeName);
+	}
+
+	if (child)
+	{
+		g_task->AddTask([parent, child]()
+		{
+			parent->RemoveChild(child);
+		});
+	}
 }
 
 bool PO3_SKSEFunctions::IsActorSoulTrapped(Actor* thisActor)
 {
-	//return CALL_MEMBER_FN(thisActor->processManager, IsSoulTrapped)() //can't use RE function because ST overhaul mods may bypass vanilla SoulTrap()
-
 	if (!thisActor)
 	{
 		return false;
@@ -665,7 +683,7 @@ bool PO3_SKSEFunctions::IsActorSoulTrapped(Actor* thisActor)
 		return false;
 	}
 
-	TESObjectREFRPtr refPtr;
+	Actor * caster = nullptr;
 	EffectSetting* mgef = nullptr;
 
 	for (auto& effect : *effects)
@@ -689,9 +707,9 @@ bool PO3_SKSEFunctions::IsActorSoulTrapped(Actor* thisActor)
 
 		//got soul-trap
 
-		LookupREFRByHandle(effect->casterRefhandle, refPtr);
+		caster = effect->GetCasterActor();
 
-		if (!refPtr)
+		if (!caster)
 		{
 			return false;
 		}
@@ -705,7 +723,7 @@ bool PO3_SKSEFunctions::IsActorSoulTrapped(Actor* thisActor)
 			isNPC = true;
 		}
 
-		auto exChanges = static_cast<ExtraContainerChanges*>(refPtr->extraData.GetByType(ExtraDataType::ContainerChanges)); //loop through caster inventory
+		auto exChanges = static_cast<ExtraContainerChanges*>(caster->extraData.GetByType(ExtraDataType::ContainerChanges)); //loop through caster inventory
 		InventoryChanges* changes = exChanges ? exChanges->changes : nullptr;
 
 		if (changes && changes->entryList)
@@ -869,7 +887,7 @@ float PO3_SKSEFunctions::GetTimeDead(Actor* thisActor)
 
 			if (g_gameDaysPassed)
 			{
-				return (floorf(g_gameDaysPassed->value * 24.0f)) - timeOfDeath;
+				return floorf(g_gameDaysPassed->value * 24.0f) - timeOfDeath;
 			}
 		}
 	}
@@ -886,7 +904,7 @@ float PO3_SKSEFunctions::GetTimeOfDeath(Actor* thisActor)
 
 		if (timeOfDeath > 0.0)
 		{
-			return (timeOfDeath / 24.0);
+			return timeOfDeath / 24.0;
 		}
 	}
 
@@ -985,7 +1003,7 @@ void PO3_SKSEFunctions::SetActorRefraction(Actor* thisActor, float refraction)
 				thisActor->UpdateRefraction(1.0);
 
 				refraction = 1.0 - refraction / 100.0;
-				refraction = (1.0 + (0.01 - 1.0) * ((refraction - 0.0) / (1.0 - 0.0)));
+				refraction = 1.0 + (0.01 - 1.0) * ((refraction - 0.0) / (1.0 - 0.0));
 
 				thisActor->UpdateRefractionProperty(1, refraction);
 			}
@@ -993,14 +1011,19 @@ void PO3_SKSEFunctions::SetActorRefraction(Actor* thisActor, float refraction)
 	}
 }
 
-SInt32 PO3_SKSEFunctions::GetDeadState(Actor* thisActor)
+SInt32 PO3_SKSEFunctions::GetActorState(Actor* thisActor)
 {
 	if (thisActor)
-	{	
-		return ((thisActor->flags04 >> 0x15) & 0xF);
+	{
+		return (thisActor->flags04 >> 0x15) & 0xF;
 	}
 
 	return -1;
+}
+
+bool PO3_SKSEFunctions::InstantKill(Actor* thisActor)
+{
+	return thisActor? thisActor->InstantKill() : false;
 }
 
 void PO3_SKSEFunctions::SetShaderType(Actor* thisActor, TESObjectARMO* templateArmor)
@@ -1081,6 +1104,7 @@ bool PO3_SKSEFunctions::AddActorToArray(Actor* thisActor, VMArray<Actor*> actorA
 UInt32 PO3_SKSEFunctions::ArrayStringCount(BSFixedString thisString, VMArray<BSFixedString> stringArray)
 {
 	UInt32 count = 0;
+
 	auto length = stringArray.GetSize();
 
 	if (length > 0)
@@ -1104,15 +1128,15 @@ UInt32 PO3_SKSEFunctions::ArrayStringCount(BSFixedString thisString, VMArray<BSF
 VMArray<BSFixedString> PO3_SKSEFunctions::SortArrayString(VMArray<BSFixedString> stringArray)
 {
 	VMArray<BSFixedString> result;
-	std::vector<std::string> vec;
 
 	auto count = stringArray.GetSize();
 
-	if (!count)
+	if (count == 0)
 	{
 		return result;
 	}
 
+	std::vector<std::string> vec;
 	vec.reserve(count);
 
 	for (UInt32 i = 0; i < count; i++)
@@ -1146,7 +1170,7 @@ VMArray<BSFixedString> PO3_SKSEFunctions::SortArrayString(VMArray<BSFixedString>
 
 float PO3_SKSEFunctions::GetEffectShaderFullParticleCount(TESEffectShader* thisEffectShader)
 {
-	return (thisEffectShader) ? (thisEffectShader->data.particleBirthRatioFull) : 0.0;
+	return thisEffectShader ? thisEffectShader->data.particleBirthRatioFull : 0.0;
 }
 
 void PO3_SKSEFunctions::SetEffectShaderFullParticleCount(TESEffectShader* thisEffectShader, float particleCount)
@@ -1159,7 +1183,7 @@ void PO3_SKSEFunctions::SetEffectShaderFullParticleCount(TESEffectShader* thisEf
 
 float PO3_SKSEFunctions::GetEffectShaderPersistentParticleCount(TESEffectShader* thisEffectShader)
 {
-	return (thisEffectShader) ? (thisEffectShader->data.particleCountPersistent) : 0.0;
+	return thisEffectShader ? thisEffectShader->data.particleCountPersistent : 0.0;
 }
 
 void PO3_SKSEFunctions::SetEffectShaderPersistentParticleCount(TESEffectShader* thisEffectShader, float particleCount)
@@ -1172,7 +1196,7 @@ void PO3_SKSEFunctions::SetEffectShaderPersistentParticleCount(TESEffectShader* 
 
 bool PO3_SKSEFunctions::IsEffectShaderFlagSet(TESEffectShader* thisEffectShader, UInt32 flag)
 {
-	return (thisEffectShader) ? (thisEffectShader->data.flags & flag) == flag : false;
+	return thisEffectShader ? (thisEffectShader->data.flags & flag) == flag : false;
 }
 
 void PO3_SKSEFunctions::SetEffectShaderFlag(TESEffectShader* thisEffectShader, UInt32 flag)
@@ -1237,15 +1261,78 @@ void PO3_SKSEFunctions::ReplaceKeywordOnForm(TESForm* thisForm, BGSKeyword* KYWD
 	}
 }
 
+// adds keyword to form 
+void PO3_SKSEFunctions::AddKeywordToForm(TESForm* thisForm, BGSKeyword* KYWDtoAdd)
+{
+	if (!thisForm || !KYWDtoAdd || thisForm->HasKeyword(KYWDtoAdd))
+	{
+		return;
+	}
+
+	auto pKeywords = DYNAMIC_CAST<BGSKeywordForm*>(thisForm);
+
+	if (pKeywords)
+	{
+		auto oldData = pKeywords->keywords;
+
+		pKeywords->keywords = calloc<BGSKeyword*>(++pKeywords->numKeywords);
+		if (oldData)
+		{
+			for (UInt32 i = 0; i < pKeywords->numKeywords - 1; ++i)
+			{
+				pKeywords->keywords[i] = oldData[i];
+			}
+
+			pKeywords->keywords[pKeywords->numKeywords - 1] = KYWDtoAdd;
+
+			free(oldData);
+			oldData = nullptr;
+		}
+	}
+}
+
+//--------------------------------------------------------------------------------------------
+// FORMLIST
+//--------------------------------------------------------------------------------------------
+
+void PO3_SKSEFunctions::AddFormsToList(VMArray<TESForm*> formArray, BGSListForm* formList, bool revertList)
+{
+	auto size = formArray.GetSize();
+
+	if (!formList)
+	{
+		return;
+	}
+
+	if (revertList)
+	{
+		formList->RevertList();
+	}
+
+	if (size > 0)
+	{
+		for (UInt32 i = 0; i < size; i++)
+		{
+			TESForm* form = nullptr;
+			formArray.GetAt(i, form);
+
+			if (form)
+			{
+				formList->AddFormToList(form);
+			}
+		}
+	}
+}
+
 //--------------------------------------------------------------------------------------------
 // GAME
 //--------------------------------------------------------------------------------------------
 
-bool PO3_SKSEFunctions::IsPluginInstalled(BSFixedString name)
+bool PO3_SKSEFunctions::IsPluginInstalled(const BSFixedString& modName)
 {
-	TESDataHandler* dataHandler = TESDataHandler::GetSingleton();
+	auto dataHandler = TESDataHandler::GetSingleton();
 
-	const TESFile* modInfo = dataHandler->LookupModByName(name.c_str());
+	const TESFile* modInfo = dataHandler->LookupModByName(modName);
 
 	if (modInfo)
 	{
@@ -1255,10 +1342,10 @@ bool PO3_SKSEFunctions::IsPluginInstalled(BSFixedString name)
 	return false;
 }
 
-VMArray<TESForm*> PO3_SKSEFunctions::GetAllSpellsInMod(BSFixedString modName, VMArray<BGSKeyword*> keywords, bool isPlayable)
+VMArray<TESForm*> PO3_SKSEFunctions::GetAllSpellsInMod(const BSFixedString& modName, VMArray<BGSKeyword*> keywords, bool isPlayable)
 {
-	TESDataHandler* dataHandler = TESDataHandler::GetSingleton();
-	UInt8 modIndex = dataHandler->GetModIndex(modName.c_str());
+	auto dataHandler = TESDataHandler::GetSingleton();
+	UInt8 modIndex = dataHandler->GetModIndex(modName);
 
 	std::vector<TESForm*> vec;
 
@@ -1266,34 +1353,18 @@ VMArray<TESForm*> PO3_SKSEFunctions::GetAllSpellsInMod(BSFixedString modName, VM
 	{
 		if (isPlayable)
 		{
+			SpellItem* spell = nullptr;
+
 			for (const auto& book : dataHandler->books)
 			{
-				if (!book)
-				{
-					continue;
-				}
-
 				if ((book->formID >> 24) != modIndex)
 				{
 					continue;
 				}
 
-				bool isSpellBook = book->data.GetSanitizedType() == TESObjectBOOK::Data::kType_Spell;
-				bool accept = false;
+				spell = book->data.teaches.spell;
 
-				SpellItem* spell = nullptr;
-
-				if (isSpellBook)
-				{
-					spell = book->data.teaches.spell;
-				}
-
-				if (VerifyKeywords(spell, &keywords))
-				{
-					accept = true;
-				}
-
-				if (!accept)
+				if (!spell || spell && !VerifyKeywords(spell, &keywords))
 				{
 					continue;
 				}
@@ -1305,11 +1376,6 @@ VMArray<TESForm*> PO3_SKSEFunctions::GetAllSpellsInMod(BSFixedString modName, VM
 		{
 			for (const auto& spell : dataHandler->spellItems)
 			{
-				if (!spell)
-				{
-					continue;
-				}
-
 				if ((spell->formID >> 24) != modIndex)
 				{
 					continue;
@@ -1328,10 +1394,10 @@ VMArray<TESForm*> PO3_SKSEFunctions::GetAllSpellsInMod(BSFixedString modName, VM
 	return vec;
 }
 
-VMArray<TESForm*> PO3_SKSEFunctions::GetAllRacesInMod(BSFixedString modName, VMArray<BGSKeyword*> keywords)
+VMArray<TESForm*> PO3_SKSEFunctions::GetAllRacesInMod(const BSFixedString& modName, VMArray<BGSKeyword*> keywords)
 {
-	TESDataHandler* dataHandler = TESDataHandler::GetSingleton();
-	UInt8 modIndex = dataHandler->GetModIndex(modName.c_str());
+	auto dataHandler = TESDataHandler::GetSingleton();
+	UInt8 modIndex = dataHandler->GetModIndex(modName);
 
 	std::vector<TESForm*> vec;
 
@@ -1339,24 +1405,12 @@ VMArray<TESForm*> PO3_SKSEFunctions::GetAllRacesInMod(BSFixedString modName, VMA
 	{
 		for (const auto& race : dataHandler->races)
 		{
-			if (!race)
-			{
-				continue;
-			}
-
 			if ((race->formID >> 24) != modIndex)
 			{
 				continue;
 			}
 
-			bool accept = false;
-
-			if (VerifyKeywords(race, &keywords))
-			{
-				accept = true;
-			}
-
-			if (!accept)
+			if (!VerifyKeywords(race, &keywords))
 			{
 				continue;
 			}
@@ -1368,14 +1422,11 @@ VMArray<TESForm*> PO3_SKSEFunctions::GetAllRacesInMod(BSFixedString modName, VMA
 	return vec;
 }
 
-void PO3_SKSEFunctions::AddAllGameSpellsToList(BGSListForm* thisList, VMArray<BGSKeyword*> keywords, bool isPlayable)
+VMArray<TESForm*> PO3_SKSEFunctions::GetAllGameSpells(VMArray<BGSKeyword*> keywords, bool isPlayable)
 {
-	if (!thisList)
-	{
-		return;
-	}
+	std::vector<TESForm*> vec;
 
-	TESDataHandler* dataHandler = TESDataHandler::GetSingleton();
+	auto dataHandler = TESDataHandler::GetSingleton();
 
 	if (isPlayable)
 	{
@@ -1383,78 +1434,49 @@ void PO3_SKSEFunctions::AddAllGameSpellsToList(BGSListForm* thisList, VMArray<BG
 
 		for (const auto& book : dataHandler->books)
 		{
-			if (!book)
+			spell = book->data.teaches.spell;
+
+			if (!spell || spell && !VerifyKeywords(spell, &keywords))
 			{
 				continue;
 			}
 
-			bool isSpellBook = book->data.GetSanitizedType() == TESObjectBOOK::Data::kType_Spell;
-			bool accept = false;
-
-			if (isSpellBook)
-			{
-				spell = book->data.teaches.spell;
-			}
-
-			if (VerifyKeywords(spell, &keywords))
-			{
-				accept = true;
-			}
-
-			if (!accept)
-			{
-				continue;
-			}
-
-
+			vec.push_back(spell);
 		}
 	}
 	else
 	{
 		for (const auto& spell : dataHandler->spellItems)
 		{
-			if (!spell)
-			{
-				continue;
-			}
-
 			if (!VerifyKeywords(spell, &keywords))
 			{
 				continue;
 			}
 
-			thisList->AddFormToList(spell);
+			vec.push_back(spell);
 		}
 	}
 
-	return;
+	return vec;
 }
 
-void PO3_SKSEFunctions::AddAllGameRacesToList(BGSListForm* thisList, VMArray<BGSKeyword*> keywords)
+VMArray<TESForm*> PO3_SKSEFunctions::GetAllGameRaces(VMArray<BGSKeyword*> keywords)
 {
-	if (!thisList)
-	{
-		return;
-	}
+	std::vector<TESForm*> vec;
 
-	TESDataHandler* dataHandler = TESDataHandler::GetSingleton();
+	auto dataHandler = TESDataHandler::GetSingleton();
 
 	for (const auto& race : dataHandler->races)
 	{
-		if (!race)
+		if (!VerifyKeywords(race, &keywords))
 		{
 			continue;
 		}
 
-		if (VerifyKeywords(race, &keywords))
-		{
-			continue;
-		}
-
-		thisList->AddFormToList(race);
+		vec.push_back(race);
 	}
 
-	return;
+	return vec;
 }
 
 //gets actors by AI processing level - see https://geck.bethsoft.com/index.php?title=GetActorsByProcessingLevel
@@ -1510,7 +1532,7 @@ VMArray<Actor*> PO3_SKSEFunctions::GetActorsByProcessingLevel(UInt32 level)
 
 float PO3_SKSEFunctions::GetLightRadius(TESObjectLIGH* thisLight)
 {
-	return (thisLight) ? static_cast<float>(thisLight->unk78.radius) : 0.0;
+	return thisLight ? static_cast<float>(thisLight->unk78.radius) : 0.0;
 }
 
 void PO3_SKSEFunctions::SetLightRadius(TESObjectLIGH* thisLight, float radius)
@@ -1523,7 +1545,7 @@ void PO3_SKSEFunctions::SetLightRadius(TESObjectLIGH* thisLight, float radius)
 
 float PO3_SKSEFunctions::GetLightFade(TESObjectLIGH* thisLight)
 {
-	return (thisLight) ? (thisLight->fadeValue) : 0.0;
+	return thisLight ? (thisLight->fadeValue) : 0.0;
 }
 
 void PO3_SKSEFunctions::SetLightFade(TESObjectLIGH* thisLight, float fadeValue)
@@ -1636,7 +1658,7 @@ void PO3_SKSEFunctions::SetLightType(TESObjectLIGH* thisLight, UInt32 lightType)
 
 float PO3_SKSEFunctions::GetLightFOV(TESObjectLIGH* thisLight)
 {
-	return (thisLight) ? (thisLight->unk78.baseFOV) : 0.0;
+	return thisLight ? thisLight->unk78.baseFOV : 0.0;
 }
 
 void PO3_SKSEFunctions::SetLightFOV(TESObjectLIGH* thisLight, float FOV)
@@ -1702,14 +1724,14 @@ void PO3_SKSEFunctions::SetLightShadowDepthBias(TESObjectREFR* thisLightObject, 
 
 BGSLocation* PO3_SKSEFunctions::GetParentLocation(BGSLocation* thisLocation)
 {
-	return (thisLocation) ? thisLocation->parentLocation : nullptr;
+	return thisLocation ? thisLocation->child : nullptr;
 }
 
 void PO3_SKSEFunctions::SetParentLocation(BGSLocation* thisLocation, BGSLocation* newLocation)
 {
 	if (thisLocation)
 	{
-		thisLocation->parentLocation = newLocation;
+		thisLocation->child = newLocation;
 	}
 }
 
@@ -1936,7 +1958,7 @@ BSFixedString PO3_SKSEFunctions::GetEffectArchetypeInternal(EffectSetting* mgef)
 	return archetype;
 }
 
-bool PO3_SKSEFunctions::HasMagicEffectWithArchetype(Actor* thisActor, BSFixedString archetype)
+bool PO3_SKSEFunctions::HasMagicEffectWithArchetype(Actor* thisActor, const BSFixedString& archetype)
 {
 	if (thisActor)
 	{
@@ -1970,7 +1992,7 @@ bool PO3_SKSEFunctions::HasMagicEffectWithArchetype(Actor* thisActor, BSFixedStr
 
 UInt32 PO3_SKSEFunctions::GetEffectArchetypeAsInt(EffectSetting* mgef)
 {
-	return (mgef) ? (mgef->properties.archetype) : 0;
+	return mgef ? mgef->properties.archetype : 0;
 }
 
 BSFixedString PO3_SKSEFunctions::GetEffectArchetypeAsString(EffectSetting* mgef)
@@ -2017,8 +2039,6 @@ void PO3_SKSEFunctions::SetMagicEffectSound(EffectSetting* mgef, BGSSoundDescrip
 			}
 		}
 	}
-
-	return;
 }
 
 //--------------------------------------------------------------------------------------------
@@ -2171,7 +2191,10 @@ VMArray<TESForm*> PO3_SKSEFunctions::AddAllInventoryItemsToArray(TESObjectREFR* 
 void PO3_SKSEFunctions::ReplaceKeywordOnRef(TESObjectREFR* thisRef, BGSKeyword* KYWDtoRemove, BGSKeyword* KYWDtoAdd)
 {
 	if (!thisRef || !KYWDtoRemove || !KYWDtoAdd)
+	{
 		return;
+	}
+
 
 	auto pKeywords = DYNAMIC_CAST<BGSKeywordForm*>(thisRef);
 
@@ -2207,6 +2230,36 @@ void PO3_SKSEFunctions::ReplaceKeywordOnRef(TESObjectREFR* thisRef, BGSKeyword* 
 	}
 }
 
+// adds keyword to form 
+void PO3_SKSEFunctions::AddKeywordToRef(TESObjectREFR* thisRef, BGSKeyword* KYWDtoAdd)
+{
+	if (!thisRef || !KYWDtoAdd || thisRef->HasKeyword(KYWDtoAdd))
+	{
+		return;
+	}
+
+	auto pKeywords = DYNAMIC_CAST<BGSKeywordForm*>(thisRef->baseForm);
+
+	if (pKeywords)
+	{
+		auto oldData = pKeywords->keywords;
+
+		pKeywords->keywords = calloc<BGSKeyword*>(++pKeywords->numKeywords);
+		if (oldData)
+		{
+			for (UInt32 i = 0; i < pKeywords->numKeywords - 1; ++i)
+			{
+				pKeywords->keywords[i] = oldData[i];
+			}
+
+			pKeywords->keywords[pKeywords->numKeywords - 1] = KYWDtoAdd;
+
+			free(oldData);
+			oldData = nullptr;
+		}
+	}
+}
+
 //calculates a 2D vector
 void PO3_SKSEFunctions::Apply2DHavokImpulse(TESObjectREFR* source, TESObjectREFR* target, float afZ, float magnitude)
 {
@@ -2215,8 +2268,8 @@ void PO3_SKSEFunctions::Apply2DHavokImpulse(TESObjectREFR* source, TESObjectREFR
 		return;
 	}
 
-	float sourceZ = (source->rot.z * (180.0 / M_PI));
-	float angleZ = (sourceZ + GetHeadingAngle(g_skyrimVM->GetState(), 0, source, target)); //source.getanglez() + source.getheadingangle(target)
+	float sourceZ = source->rot.z * (180.0 / M_PI);
+	float angleZ = sourceZ + GetHeadingAngle(g_skyrimVM->GetState(), 0, source, target); //source.getanglez() + source.getheadingangle(target)
 
 	g_task->AddTask([target, angleZ, afZ, magnitude]()
 	{
@@ -2430,10 +2483,10 @@ Actor* PO3_SKSEFunctions::GetActorCause(TESObjectREFR* thisRef)
 	if (thisRef)
 	{
 		TESObjectREFRPtr refPtr;
-		
+
 		LookupREFRByHandle(*thisRef->GetActorCause(), refPtr);
 
-		actor = niptr_cast<Actor>(refPtr);;
+		actor = niptr_cast<Actor>(refPtr);
 
 		if (actor)
 		{
@@ -2447,15 +2500,15 @@ Actor* PO3_SKSEFunctions::GetActorCause(TESObjectREFR* thisRef)
 Actor* PO3_SKSEFunctions::GetClosestActorFromRef(TESObjectREFR* thisRef, float radius)
 {
 	if (thisRef)
-	{		
+	{
 		auto squaredRadius = radius * radius;
 		auto shortestDistance = std::numeric_limits<float>::max();
 
 		auto originPos = thisRef->pos;
-		
-		std::map<float, Actor*> map;		
+
+		std::map<float, Actor*> map;
 		TESObjectREFRPtr refPtr;
-	
+
 		auto singleton = Unknown012E32E8::GetSingleton();
 
 		for (auto& refHandle : singleton->actorsHigh)
@@ -2468,14 +2521,14 @@ Actor* PO3_SKSEFunctions::GetClosestActorFromRef(TESObjectREFR* thisRef, float r
 			{
 				continue;
 			}
-			
+
 			auto distance = CalcLinearDistance(originPos, actor->pos);
 
 			if (distance > squaredRadius)
 			{
 				continue;
 			}
-			
+
 			map.try_emplace(distance, actor);
 
 			if (distance < shortestDistance)
@@ -2510,14 +2563,12 @@ Actor* PO3_SKSEFunctions::GetRandomActorFromRef(TESObjectREFR* thisRef, float ra
 	if (thisRef)
 	{
 		auto squaredRadius = radius * radius;
-
 		auto originPos = thisRef->pos;
 
 		std::vector<Actor*> vec;
 		TESObjectREFRPtr refPtr;
 
 		auto singleton = Unknown012E32E8::GetSingleton();
-
 		vec.reserve(singleton->numActorsInHighProcess);
 
 		for (auto& refHandle : singleton->actorsHigh)
@@ -2582,7 +2633,7 @@ SInt32 PO3_SKSEFunctions::GetPackageType(TESPackage* package)
 
 float PO3_SKSEFunctions::GetProjectileSpeed(BGSProjectile* thisProjectile)
 {
-	return (thisProjectile) ? (thisProjectile->data.speed) : 0.0;
+	return thisProjectile ? thisProjectile->data.speed : 0.0;
 }
 
 void PO3_SKSEFunctions::SetProjectileSpeed(BGSProjectile* thisProjectile, float speed)
@@ -2595,7 +2646,7 @@ void PO3_SKSEFunctions::SetProjectileSpeed(BGSProjectile* thisProjectile, float 
 
 float PO3_SKSEFunctions::GetProjectileRange(BGSProjectile* thisProjectile)
 {
-	return (thisProjectile) ? (thisProjectile->data.range) : 0.0;
+	return thisProjectile ? thisProjectile->data.range : 0.0;
 }
 
 void PO3_SKSEFunctions::SetProjectileRange(BGSProjectile* thisProjectile, float range)
@@ -2608,7 +2659,7 @@ void PO3_SKSEFunctions::SetProjectileRange(BGSProjectile* thisProjectile, float 
 
 float PO3_SKSEFunctions::GetProjectileGravity(BGSProjectile* thisProjectile)
 {
-	return (thisProjectile) ? (thisProjectile->data.gravity) : 0.0;
+	return thisProjectile ? thisProjectile->data.gravity : 0.0;
 }
 
 void PO3_SKSEFunctions::SetProjectileGravity(BGSProjectile* thisProjectile, float gravity)
@@ -2621,7 +2672,7 @@ void PO3_SKSEFunctions::SetProjectileGravity(BGSProjectile* thisProjectile, floa
 
 float PO3_SKSEFunctions::GetProjectileImpactForce(BGSProjectile* thisProjectile)
 {
-	return (thisProjectile) ? (thisProjectile->data.impactForce) : 0.0;
+	return thisProjectile ? thisProjectile->data.impactForce : 0.0;
 }
 
 void PO3_SKSEFunctions::SetProjectileImpactForce(BGSProjectile* thisProjectile, float impactForce)
@@ -2687,7 +2738,7 @@ void PO3_SKSEFunctions::SetSoundDescriptor(TESSound* thisSound, BGSSoundDescript
 
 UInt32 PO3_SKSEFunctions::GetSpellType(SpellItem* thisSpell)
 {
-	return (thisSpell) ? thisSpell->data.type : 0;
+	return thisSpell ? thisSpell->data.type : 0;
 }
 
 //--------------------------------------------------------------------------------------------
@@ -2696,7 +2747,7 @@ UInt32 PO3_SKSEFunctions::GetSpellType(SpellItem* thisSpell)
 
 BGSArtObject* PO3_SKSEFunctions::GetArtObject(BGSReferenceEffect* visualEffect)
 {
-	return (visualEffect) ? visualEffect->data.effectArt : nullptr;
+	return visualEffect ? visualEffect->data.effectArt : nullptr;
 }
 
 void PO3_SKSEFunctions::SetArtObject(BGSReferenceEffect* visualEffect, BGSArtObject* art)
@@ -2714,13 +2765,13 @@ void PO3_SKSEFunctions::SetArtObject(BGSReferenceEffect* visualEffect, BGSArtObj
 //returns wind speed from 0-255 (how it's set up in the weather form)
 UInt32 PO3_SKSEFunctions::GetWindSpeedAsInt(TESWeather* thisWeather)
 {
-	return (thisWeather) ? (thisWeather->general.windSpeed) : 0;
+	return thisWeather ? thisWeather->general.windSpeed : 0;
 }
 
 //returns wind speed from 0.0-1.0 (how it's set up in the CK)
 float PO3_SKSEFunctions::GetWindSpeedAsFloat(TESWeather* thisWeather)
 {
-	return (thisWeather) ? ((thisWeather->general.windSpeed) / 255.0) : 0.0;
+	return thisWeather ? thisWeather->general.windSpeed / 255.0 : 0.0;
 }
 
 SInt32 PO3_SKSEFunctions::GetWeatherType(TESWeather* thisWeather)
@@ -2734,7 +2785,9 @@ SInt32 PO3_SKSEFunctions::GetWeatherType(TESWeather* thisWeather)
 
 	if (!currentWeather)
 	{
-		currentWeather = Sky::GetSingleton()->curentWeather;
+		auto singleton = Sky::GetSingleton();
+
+		currentWeather = singleton->curentWeather;
 	}
 
 	if (currentWeather)
@@ -2788,8 +2841,8 @@ bool PO3_SKSEFunctions::Register(VMState* state)
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetHeadPartTextureSet, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, SetHeadPartTextureSet, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, SetHeadPartAlpha, state);
-	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, ToggleSkinnedDecalNode, state);
-	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, RemoveFaceGenNode, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, ToggleChildNode, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, RemoveChildNode, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, IsActorSoulTrapped, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, ResetActor3D, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, DecapitateActor, state);
@@ -2800,7 +2853,8 @@ bool PO3_SKSEFunctions::Register(VMState* state)
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetActorAlpha, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetActorRefraction, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, SetActorRefraction, state);
-	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetDeadState, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetActorState, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, InstantKill, state);
 	//REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, SetShaderType, state);
 
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddStringToArray, state);
@@ -2817,12 +2871,15 @@ bool PO3_SKSEFunctions::Register(VMState* state)
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, ClearEffectShaderFlag, state);
 
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, ReplaceKeywordOnForm, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddKeywordToForm, state);
+
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddFormsToList, state);
 
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, IsPluginInstalled, state, VMState::kFunctionFlag_NoWait);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllSpellsInMod, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllRacesInMod, state);
-	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddAllGameSpellsToList, state);
-	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddAllGameRacesToList, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllGameSpells, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllGameRaces, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetActorsByProcessingLevel, state);
 
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetLightRadius, state);
@@ -2858,6 +2915,7 @@ bool PO3_SKSEFunctions::Register(VMState* state)
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddAllInventoryItemsToArray, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddAllEquippedItemsToArray, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, ReplaceKeywordOnRef, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, AddKeywordToRef, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, Apply2DHavokImpulse, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, Apply3DHavokImpulse, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, MoveToNearestNavmeshLocation, state);

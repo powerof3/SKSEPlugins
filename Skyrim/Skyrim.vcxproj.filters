@@ -169,6 +169,9 @@
     <Filter Include="Header Files\Skyrim\SpeedTree">
       <UniqueIdentifier>{0c5ae765-724c-4023-a42a-fc37dc0b086b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Skyrim\TempEffecs">
+      <UniqueIdentifier>{551462c9-0180-417e-b549-6af88a139d43}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\AI">
       <UniqueIdentifier>{e04b986c-42aa-46a2-8194-57f6b41eed7b}</UniqueIdentifier>
     </Filter>
@@ -225,12 +228,6 @@
     </Filter>
     <Filter Include="Source Files\Magic">
       <UniqueIdentifier>{d1cb70cb-6936-47c1-9174-64fe60e52a9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Skyrim\Systems">
-      <UniqueIdentifier>{11c60374-2373-4217-ae3d-e6623350140a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Skyrim\TempEffects">
-      <UniqueIdentifier>{551462c9-0180-417e-b549-6af88a139d43}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -645,20 +642,20 @@
     <ClCompile Include="src\Magic\ActiveEffect.cpp">
       <Filter>Source Files\Magic</Filter>
     </ClCompile>
-    <ClCompile Include="src\Animation\BShkbAnimationGraph.cpp">
-      <Filter>Source Files\Animation</Filter>
+    <ClCompile Include="src\TESForms\Objects\TESObjectARMA.cpp">
+      <Filter>Source Files\TESForms\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TESForms\Objects\TESObjectBOOK.cpp">
+      <Filter>Source Files\TESForms\Objects</Filter>
     </ClCompile>
     <ClCompile Include="src\ExtraData\ExtraLightData.cpp">
       <Filter>Source Files\ExtraData</Filter>
     </ClCompile>
-    <ClCompile Include="src\TESForms\Objects\TESObjectARMA.cpp">
-      <Filter>Source Files\TESForms\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="src\TESForms\Character\TESNPC.cpp">
       <Filter>Source Files\TESForms\Character</Filter>
     </ClCompile>
-    <ClCompile Include="src\TESForms\Objects\TESObjectBOOK.cpp">
-      <Filter>Source Files\TESForms\Objects</Filter>
+    <ClCompile Include="src\FormComponents\Condition.cpp">
+      <Filter>Source Files\FormComponents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2349,13 +2346,13 @@
       <Filter>Header Files\Skyrim\Regions</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectGeometryDecal.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectSimpleDecal.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffectWeaponBlood.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\AI\BGSAttackData.h">
       <Filter>Header Files\Skyrim\AI</Filter>
@@ -2796,13 +2793,13 @@
       <Filter>Header Files\Skyrim\TESForms\Character</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\BSTempEffect.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\ReferenceEffect.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\ReferenceEffectController.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TESForms\World\PlayerCharacter.h">
       <Filter>Header Files\Skyrim\TESForms\World</Filter>
@@ -2969,17 +2966,14 @@
     <ClInclude Include="include\Skyrim\Magic\MagicTarget.h">
       <Filter>Header Files\Skyrim\Magic</Filter>
     </ClInclude>
-    <ClInclude Include="include\Skyrim\Animation\BShkbAnimationGraph.h">
-      <Filter>Header Files\Skyrim\Animation</Filter>
+    <ClInclude Include="include\Skyrim\Misc\012E32E8.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="include\Skyrim\Systems\012E32E8.h">
-      <Filter>Header Files\Skyrim\Systems</Filter>
+    <ClInclude Include="include\Skyrim\Misc\GameTime.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
     </ClInclude>
     <ClInclude Include="include\Skyrim\TempEffects\ShaderReferenceEffect.h">
-      <Filter>Header Files\Skyrim\TempEffects</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Skyrim\Systems\GameTime.h">
-      <Filter>Header Files\Skyrim\Systems</Filter>
+      <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

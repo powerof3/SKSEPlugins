@@ -25,7 +25,6 @@ public:
 	DEFINE_MEMBER_FN(RemoveFormFromList, void, 0x004FB4A0, TESForm * form);
 	DEFINE_MEMBER_FN(RevertList, void, 0x004FB2F0);
 
-public:
 	// @members
 	//void **			_vtbl;		// 00 - 0108D12C
 	BSTArray<TESForm*>	forms;		// 14

@@ -27,7 +27,7 @@ public:
 	virtual float	Unk_02(void) override;                           // 006686E0
 	virtual void	Unk_03(void) override;                           // 006687F0
 	virtual void	Unk_04(UInt32 arg1, UInt32 arg2) override;       // 006686F0
-	virtual float *	Unk_05(void) override;                           // 00668840
+	virtual float* Unk_05(void) override;                           // 00668840
 	virtual bool	Unk_06(void) override;                           // 00668850
 	virtual bool	Unk_07(void) override;                           // 006688B0
 	virtual bool	Unk_08(void) override;                           // 00668B60
@@ -39,8 +39,8 @@ public:
 	virtual bool	Unk_0E(void) override;                           // 0092D110 { return false; }
 	virtual bool	Unk_17(void) override;                           // 00668940
 	virtual UInt32	Unk_18(void) override;                           // 00669000
-	virtual void	Unk_1E(UInt32 *arg) override;                    // 00668980
-	virtual float *	Unk_1F(void) override;                           // 009995F0 { return &unkC; }
+	virtual void	Unk_1E(UInt32* arg) override;                    // 00668980
+	virtual float* Unk_1F(void) override;                           // 009995F0 { return &unkC; }
 	virtual bool	Unk_20(void) override;                           // 00668700
 	virtual void	Unk_21(UInt32 arg) override;                     // 00669170
 	virtual void	Unk_22(UInt32 arg) override;                     // 00669070
@@ -48,7 +48,7 @@ public:
 
 	// @members
 	//void			** _vtbl;	// 00 - 010C8AB4
-	ActiveEffect	* effect;	// 04
+	ActiveEffect* effect;	// 04
 	UInt32			unk08;
 	UInt32			unk0C;
 	UInt32			unk10;
@@ -100,17 +100,17 @@ public:
 	virtual void	Unk_18(void);						// 007C1470
 
 
-	static ActiveEffect * Create(Actor *caster, UInt32 arg2, MagicItem *magicItem, EffectItem *effectItem, TESForm *sourceItem, bool arg6)	// 00662970
+	static ActiveEffect* Create(Actor* caster, UInt32 arg2, MagicItem* magicItem, EffectItem* effectItem, TESForm* sourceItem, bool arg6)	// 00662970
 	{
-		typedef ActiveEffect *(*Fn)(Actor *, UInt32, MagicItem *, EffectItem *, TESForm *, bool);
+		typedef ActiveEffect* (*Fn)(Actor*, UInt32, MagicItem*, EffectItem*, TESForm*, bool);
 		const Fn fn = (Fn)0x00662970;
 
 		return fn(caster, arg2, magicItem, effectItem, sourceItem, arg6);
 	}
 
-	Actor * GetCasterActor() const;
-	Actor * GetTargetActor() const;
-	EffectSetting * GetBaseObject() const {
+	Actor* GetCasterActor() const;
+	Actor* GetTargetActor() const;
+	EffectSetting* GetBaseObject() const {
 		return effect->mgef;
 	}
 
@@ -123,11 +123,11 @@ public:
 	UInt8									unk20;				// 20 - init'd 0
 	UInt32									unk24;				// 24 - init'd 0
 	RefHandle								casterRefhandle;	// 28
-	void									* niNode;			// 2C
-	MagicItem								* item;				// 30
-	EffectItem								* effect;			// 34
-	MagicTarget								* magicTarget;		// 38
-	TESForm									* sourceItem;		// 3C
+	void* niNode;			// 2C
+	MagicItem* item;				// 30
+	EffectItem* effect;			// 34
+	MagicTarget* magicTarget;		// 38
+	TESForm* sourceItem;		// 3C
 	UInt32									unk40;				// 40 - init'd 0
 	UInt32									unk44;				// 44 - init'd 0
 	float									elapsed;			// 48 - init'd 0
@@ -140,7 +140,7 @@ public:
 	UInt32									unk60;				// 60 - init'd 4
 
 private:
-	DEFINE_MEMBER_FN(ctor, ActiveEffect *, 0x00655A10, Actor *caster, MagicItem *pItem, EffectItem *pEffect);
+	DEFINE_MEMBER_FN(ctor, ActiveEffect*, 0x00655A10, Actor* caster, MagicItem* pItem, EffectItem* pEffect);
 };
 STATIC_ASSERT(sizeof(ActiveEffect) == 0x64);
 
@@ -276,7 +276,7 @@ class CommandEffect : public ActiveEffect
 public:
 	virtual ~CommandEffect();
 
-	// ??
+	UInt32 unk64 = 0; // 64
 };
 
 /*==============================================================================
@@ -290,7 +290,8 @@ class ReanimateEffect : public CommandEffect
 public:
 	virtual ~ReanimateEffect();
 
-	// ??
+	UInt8 unk68 = 1;
+	UInt8 pad69[3];
 };
 
 /*==============================================================================

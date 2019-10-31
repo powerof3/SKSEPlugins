@@ -39,16 +39,6 @@ public:
 		kSleepState_WantsToWake = 4
 	};
 
-	enum
-	{
-		kBleedingState_NotDead = 0,
-		kBleedingState_Dying = 1,
-		kBleedingState_Dead = 2,
-		kBleedingState_UnkDeathState = 5,
-		kBleedingState_UnkBleedOutState = 7,	//not verified	
-		kBleedingState_EnterBleedout = 8
-	};
-
 	virtual ~ActorState();											// 006C51E0
 
 	// @override

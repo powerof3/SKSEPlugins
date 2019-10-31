@@ -33,7 +33,7 @@ public:
 		}
 
 		SetName("PapyrusExtender");
-		SetVersion(1.70);
+		SetVersion(2);
 
 		return true;
 	}

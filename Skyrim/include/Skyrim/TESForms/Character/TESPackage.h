@@ -17,7 +17,7 @@ class TESPackage : public TESForm
 public:
 	enum { kTypeID = (UInt32)FormType::Package };
 
-	enum PackageType : UInt8 
+	enum PackageType
 	{
 		kPackageType_Find = 0,
 		kPackageType_Follow,
@@ -56,11 +56,8 @@ public:
 		kPackageType_StealWarning,
 		kPackageType_PickPocketWarning,
 		kPackageType_MovementBlocked,
-		kPackageType_VampireFeed, // 37 (0x25)
-		kPackageType_CannibalFeed, // 38 (0x26)
-		kPackageType_Unknown39, // 39 (0x27)
-		kPackageType_Unknown40, // 40 (0x28)
-		kPackageType_Unknown41, // 41 (0x29)
+		kPackageType_Unk37,
+		kPackageType_Unk38
 	};
 
 	// @override
@@ -108,7 +105,7 @@ public:
 
 	// @members
 	UInt32		packageFlags;	// 14
-	PackageType	type;			// 18 - see kPackageType_ enum
+	UInt8		type;			// 18 - see kPackageType_ enum
 	UInt8		unk19;			// 19
 	UInt8		unk1A;			// 1A
 	UInt8		pad1B;			// 1B

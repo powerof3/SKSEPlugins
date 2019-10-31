@@ -26,7 +26,7 @@ public:
 	enum { kTypeID = (UInt32)FormType::Location };
 
 	// @members
-	BGSLocation					* parentLocation;	// 28 (himika)
+	BGSLocation					* child;	// 28 (himika)
 	UInt32						unk2C;		// 2C - init'd to 0
 	UInt32						unk30;		// 30 - init'd to 0
 	UInt32						unk34;		// 34 - init'd to 0
@@ -54,8 +54,8 @@ public:
 	}
 	bool IsChild(BGSLocation* akOther) const {		// 008E9FC0 - Location.IsChild()
 		bool result = false;
-		for (const BGSLocation* loc = akOther; loc; loc = loc->parentLocation) {
-			if (loc->parentLocation == this) {
+		for (const BGSLocation* loc = akOther; loc; loc = loc->child) {
+			if (loc->child == this) {
 				result = true;
 				break;
 			}

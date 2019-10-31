@@ -22,8 +22,8 @@ bool TESPackage::IsExtraType() const	// 005DEFA0
 	case kPackageType_StealWarning:
 	case kPackageType_PickPocketWarning:
 	case kPackageType_MovementBlocked:
-	case kPackageType_VampireFeed:
-	case kPackageType_CannibalFeed:
+	case kPackageType_Unk37:
+	case kPackageType_Unk38:
 		return true;
 		break;
 	}

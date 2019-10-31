@@ -9,6 +9,7 @@
 #include <utility>
 #include <tuple>
 
+
 namespace SKSEScript
 {
 	template <class... Args>

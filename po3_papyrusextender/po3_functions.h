@@ -16,14 +16,16 @@
 #include "SKSE/PluginAPI.h"
 #include "SKSE/DebugLog.h"
 
-#include "Skyrim\BSSystem\BSTCreateFactory.h"
+#include "Skyrim/BSSystem/BSTCreateFactory.h"
 
 #include "Skyrim/NetImmerse/NiGeometry.h"
 #include "Skyrim/NetImmerse/NiMaterial.h"
 
-#include "Skyrim/Systems/012E32E8.h"
-#include "Skyrim/Systems/GameTime.h"
+#include "Skyrim/Misc/012E32E8.h"
+#include "Skyrim/Misc/GameTime.h"
 #include "Skyrim/TempEffects/ShaderReferenceEffect.h"
+
+#include "Skyrim/TESForms/Gameplay/BGSTextureSet.h"
 
 #include "SKSE/PapyrusFunctions.h"
 #include "SKSE/PapyrusEvents.h"
@@ -79,9 +81,9 @@ public:
 
 	static void SetHeadPartAlpha(Actor* thisActor, UInt32 partType, float alpha);
 
-	static void ToggleSkinnedDecalNode(Actor* thisActor, bool disable);
+	static void ToggleChildNode(Actor* thisActor, const BSFixedString & nodeName, bool disable);
 
-	static void RemoveFaceGenNode(Actor* thisActor);
+	static void RemoveChildNode(Actor* thisActor, const BSFixedString & nodeName);
 
 	static bool IsActorSoulTrapped(Actor* thisActor);
 
@@ -105,7 +107,9 @@ public:
 
 	static void SetActorRefraction(Actor* thisActor, float refraction);
 
-	static SInt32 GetDeadState(Actor* thisActor);
+	static SInt32 GetActorState(Actor* thisActor);
+
+	static bool InstantKill(Actor* thisActor);
 
 	static void SetShaderType(Actor* thisActor, TESObjectARMO* templateArmor);
 
@@ -144,20 +148,28 @@ public:
 	//--------------------------------------------------------------------------------------------
 
 	static void ReplaceKeywordOnForm(TESForm* thisForm, BGSKeyword* KYWDtoRemove, BGSKeyword* KYWDtoAdd);
+	
+	static void AddKeywordToForm(TESForm* thisForm, BGSKeyword* KYWDtoAdd);
+
+	//--------------------------------------------------------------------------------------------
+	// FORMLIST
+	//--------------------------------------------------------------------------------------------
+
+	static void AddFormsToList(VMArray<TESForm*> formArray, BGSListForm * formList, bool revertList);
 
 	//--------------------------------------------------------------------------------------------
 	// GAME
 	//--------------------------------------------------------------------------------------------
 
-	static bool IsPluginInstalled(BSFixedString name);
+	static bool IsPluginInstalled(const BSFixedString & modName);
 
-	static VMArray<TESForm*> GetAllSpellsInMod(BSFixedString modName, VMArray<BGSKeyword*> keywords, bool isPlayable);
+	static VMArray<TESForm*> GetAllSpellsInMod(const BSFixedString & modName, VMArray<BGSKeyword*> keywords, bool isPlayable);
 
-	static VMArray<TESForm*> GetAllRacesInMod(BSFixedString modName, VMArray<BGSKeyword*> keywords);
+	static VMArray<TESForm*> GetAllRacesInMod(const BSFixedString & modName, VMArray<BGSKeyword*> keywords);
 
-	static void AddAllGameSpellsToList(BGSListForm* thisList, VMArray<BGSKeyword*> keywords, bool isPlayable);
+	static VMArray<TESForm*> GetAllGameSpells(VMArray<BGSKeyword*> keywords, bool isPlayable);
 
-	static void AddAllGameRacesToList(BGSListForm* thisList, VMArray<BGSKeyword*> keywords);
+	static VMArray<TESForm*> GetAllGameRaces(VMArray<BGSKeyword*> keywords);
 
 	static VMArray<Actor*> GetActorsByProcessingLevel(UInt32 level);
 
@@ -219,7 +231,7 @@ public:
 
 	static BSFixedString GetEffectArchetypeInternal(EffectSetting* mgef);
 
-	static bool HasMagicEffectWithArchetype(Actor* thisActor, BSFixedString archetype);
+	static bool HasMagicEffectWithArchetype(Actor* thisActor, const BSFixedString & archetype);
 
 	static UInt32 GetEffectArchetypeAsInt(EffectSetting* mgef);
 
@@ -242,6 +254,8 @@ public:
 	static VMArray<TESForm*> AddAllInventoryItemsToArray(TESObjectREFR* thisRef, bool noEquipped, bool noFavourited, bool noQuestItem);
 
 	static void ReplaceKeywordOnRef(TESObjectREFR* thisRef, BGSKeyword* KYWDtoRemove, BGSKeyword* KYWDtoAdd);
+
+	static void AddKeywordToRef(TESObjectREFR* thisRef, BGSKeyword* KYWDtoAdd);
 
 	static void Apply2DHavokImpulse(TESObjectREFR* source, TESObjectREFR* target, float afZ, float magnitude);
 

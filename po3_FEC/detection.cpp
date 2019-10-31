@@ -113,6 +113,6 @@ namespace Detection_Hook
 	};
 	void Apply()
 	{
-		WriteRelJump(0x00598989, (UInt32)& Outer); //0x00598979
+		WriteRelJump(0x00598989, reinterpret_cast<UInt32>(&Outer)); //0x00598979
 	};
 };

@@ -123,7 +123,7 @@ public:
 	UInt32					numModal;					// 0E0 (= 0)  = 1 if (imenu->flags & 0x0010)
 	UInt32					unk_0E4;					// 0E4
 	Unknown3				unk_0E8;					// 0E8
-	bool					showMenus;					// 118 (= 0)
+	bool					unk_118;					// 118 (= 0)
 	bool					unk_119;					// 119 (= 0)
 	char					pad[2];
 

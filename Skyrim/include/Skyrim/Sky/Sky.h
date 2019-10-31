@@ -28,6 +28,7 @@ public:
 	void ReleaseOverride();				// 0x005939C0
 
 	DEFINE_MEMBER_FN_const(FindWeather, TESWeather*, 0x009180E0, UInt32);
+
 	DEFINE_MEMBER_FN(ctor, Sky*, 0x005939C0);
 	DEFINE_MEMBER_FN_const(IsSnowing, bool, 0x00504350);
 
@@ -45,7 +46,7 @@ public:
 	TESClimate		* climate;			// 28
 	TESWeather		* curentWeather;	// 2C - Weather.GetCurrentWeather()
 	TESWeather		* outgoingWeather;	// 30 - Weather.GetOutgoingWeather()
-	TESWeather      * nextWeather;		// 34 - next weather in queue, transition hasn't begun yet
+	UInt32			unk34;				// 34
 	UInt32			unk38;				// 38
 	TESRegion		* region;			// 3C
 	Atmosphere		* atmosphere;		// 40
@@ -65,10 +66,8 @@ public:
 	UInt32			unk110[9];			// 110
 	float			unk134[7];			// 134
 	UInt32			unk150[3];			// 150
-	float			unk15C[2];			// 15C
-	float			timeOfDay;			// 1B0 - time of day as float 0.0~24.0
-	float			unk1B4;				// 1B4
-	float			transition;			// 16C - Weather.GetCurrentWeatherTransition()
+	float			unk15C[4];			// 15C
+	float			unk16C;				// 16C - Weather.GetCurrentWeatherTransition()
 	UInt32			skyMode;			// 170 - Weather.GetSkyMode()
 	void			* unk174;			// 174
 	UInt32			unk178[3];			// 178

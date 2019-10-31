@@ -114,7 +114,7 @@ public:
 	//void					** _vtbl;			// 00 - 01077E7C
 	BSTArray<EffectItem *>	effectItemList;		// 34
 	UInt32					hostile;			// 40 - init'd 0
-	EffectSetting           * effectTemplate;	// 44 - init'd 0
+	EffectSetting			* unk44;			// 44 - init'd 0
 	UInt32					unk48;				// 48 - init'd 0
 	void					* unk4C;			// 4C - init'd nullptr - refCount+0008
 };

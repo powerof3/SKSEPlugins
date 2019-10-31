@@ -10,9 +10,9 @@ class BSTransformDeltaEvent
 
 struct BSAnimationGraphEvent
 {
-	BSFixedString	animName;
-	TESObjectREFR*	akTarget;
-	BSFixedString	optionalStr;
+	const BSFixedStringCI	* animName;
+	void					* unk04;
+	BSFixedStringCI			optionString;
 };
 
 

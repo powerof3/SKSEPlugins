@@ -21,7 +21,7 @@ namespace SKSEScript
 		&& BSScript::is_form<_Base>::value
 		&& BSScript::are_packable<_Params...>::value
 	>::type
-		RegisterFunction(const char *className, const char *funcName, _Result(_Base::*func)(_Params...), VMState *state, UInt32 flags = 0)
+	RegisterFunction(const char *className, const char *funcName, _Result(_Base::*func)(_Params...), VMState *state, UInt32 flags = 0)
 	{
 		BSScript::IFunction *ifunc = new NativeFunction<_Base, _Result, _Params...>(funcName, className, func, state);
 		state->RegisterFunction(ifunc);
@@ -37,7 +37,7 @@ namespace SKSEScript
 		BSScript::is_valid_result<_Result>::value
 		&& BSScript::are_packable<_Params...>::value
 	>::type
-		RegisterFunction(const char *className, const char *funcName, _Result(*func)(_Params...), VMState *state, UInt32 flags = 0)
+	RegisterFunction(const char *className, const char *funcName, _Result(*func)(_Params...), VMState *state, UInt32 flags = 0)
 	{
 		state->RegisterFunction(new NativeFunction<BSScript::StaticFunctionTag, _Result, _Params...>(funcName, className, func, state));
 		if (flags)
@@ -152,13 +152,13 @@ namespace SKSEScript
 
 		template <std::size_t N = 0>
 		inline typename std::enable_if< (N == sizeof...(_Params)) >::type
-			SetParams(VMState *state)
+		SetParams(VMState *state)
 		{
 		}
 
 		template <std::size_t N = 0>
 		inline typename std::enable_if< (N < sizeof...(_Params)) >::type
-			SetParams(VMState *state)
+		SetParams(VMState *state)
 		{
 			m_params.data[N].type = BSScript::GetTypeID< type_at<N, _Params...>::type >(state);
 			SetParams<N + 1>(state);

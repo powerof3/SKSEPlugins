@@ -5,7 +5,6 @@
 #include "../BSCore/BSSpinLock.h"
 #include "../BSSystem/BSTSmartPointer.h"
 #include "BSAnimationGraphChannel.h"
-#include "BShkbAnimationGraph.h"
 
 
 BSSmartPointer(BSAnimationGraphManager);
@@ -60,7 +59,7 @@ public:
 	//BSIntrusiveRefCounted				count;			// 04
 	BSTArray<BSAnimationGraphChannel*>	channels;		// 08
 	UInt32								unk14[3];		// 14
-	BSTSmallArray<BShkbAnimationGraph*>	animationGraphs;	// 20
+	BSTSmallArray<UnkClass_011250F0*>	unk20;			// 20
 	UInt32								unk2C[3];		// 2C
 	BSTArray<AnimationVariableData*>	unk38;			// 38
 	void								* unk44;		// 44

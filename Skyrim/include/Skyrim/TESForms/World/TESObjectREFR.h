@@ -183,7 +183,7 @@ public:
 	virtual void	Unk_69(void);										// 006C50E0 { return; }
 	virtual void	Unk_6A(void);										// 004E6FD0
 	virtual void 	Unk_6B(void);										// 004DF380
-	virtual void	Unk_6C(NiNode*, bool);								// 004E76C0 called from Unk_11
+	virtual void	Unk_6C(UInt32 unk1, UInt32 unk2);					// 004E76C0 called from Unk_11
 	virtual void	SetNiNode(NiNode * root, UInt32 unk1);				// 004D5660 nullptr, 1?
 	virtual void	Unk_6E(void);										// 006C50E0 { return; }
 	virtual NiNode *	GetNiRootNode(UInt32 firstPerson);				// 004E69E0

@@ -55,12 +55,6 @@ public:
 		kTime_Night = 3
 	};
 
-	// 110
-	struct ColorType
-	{
-		UInt32	time[kNumTimeOfDay];
-	};
-
 	enum Classification : UInt8 {
 		kNone = 0,
 		kWeather_Pleasant = 1,
@@ -69,6 +63,12 @@ public:
 		kWeather_Snowy = 8,
 		kSkyStatic_AlwaysVisible = 16,
 		kSkyStatic_FollowsSunPosition = 32
+	};
+
+	// 110
+	struct ColorType
+	{
+		UInt32	time[kNumTimeOfDay];
 	};
 
 	// 13
@@ -101,8 +101,6 @@ public:
 		UInt8	windDirectionRange;				// 12
 		UInt8	unk13;							// 13
 	};
-	static_assert(offsetof(General, classification) >= 0x0B, "classification is too early!");
-	static_assert(offsetof(General, classification) <= 0x0B, "classification is too late!");
 
 	// 20
 	struct FogDistance
@@ -134,12 +132,12 @@ public:
 	FogDistance							fogDistance;						// 56C
 	ColorType							colorTypes[kNumColorTypes];			// 58C
 	TESAIForm::Data						unk69C;								// 69C
-	BSTArray<void*>						unk6A4;								// 6A4
+	BSTArray<void *>					unk6A4;								// 6A4
 	UInt32								pad6B0;								// 6B0 - not init'd
-	TESImageSpace*						imageSpaces[kNumTimeOfDay];			// 6B4
+	TESImageSpace						* imageSpaces[kNumTimeOfDay];		// 6B4
 	BGSLightingTemplate::Data::Color	directionalAmbient[kNumTimeOfDay];	// 6C4
 	TESModel							unk744;								// 744
-	BGSShaderParticleGeometryData*		particleShader;						// 758
-	BGSReferenceEffect*					referenceEffect;					// 75C - NNAM visual effect
+	BGSShaderParticleGeometryData		* particleShader;					// 758
+	BGSReferenceEffect					* referenceEffect;					// 75C - NNAM visual effect
 };
 STATIC_ASSERT(sizeof(TESWeather) == 0x760);
