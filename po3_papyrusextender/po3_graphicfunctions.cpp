@@ -2,11 +2,11 @@
 
 //--------------------------------------------------------------------------------------------
 
-extern const SKSETaskInterface	* g_task;
+extern const SKSETaskInterface* g_task;
 
 //-----------------------MAIN--------------------------------------------------------
 
-void SetShaderPropertyRGBTint(NiGeometry * geometry)
+void SetShaderPropertyRGBTint(NiGeometry* geometry)
 {
 	if (!geometry)
 	{
@@ -26,7 +26,7 @@ void SetShaderPropertyRGBTint(NiGeometry * geometry)
 
 		if (material && material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen)
 		{
-			auto tintedMaterial = static_cast<BSTintedShaderMaterial *>(CreateShaderMaterial(BSShaderMaterial::kShaderType_FaceGenRGBTint));
+			auto tintedMaterial = static_cast<BSTintedShaderMaterial*>(CreateShaderMaterial(BSShaderMaterial::kShaderType_FaceGenRGBTint));
 			tintedMaterial->CopyFrom(material);
 			lightingShader->SetFlags(0x0A, false);
 			lightingShader->SetFlags(0x15, true);
@@ -36,7 +36,7 @@ void SetShaderPropertyRGBTint(NiGeometry * geometry)
 	}
 }
 
-void SetShaderPropertyAlpha(NiGeometry * geometry, float alpha, bool onlySkin)
+void SetShaderPropertyAlpha(NiGeometry* geometry, float alpha, bool onlySkin)
 {
 	if (!geometry)
 	{
@@ -71,30 +71,30 @@ void SetShaderPropertyAlpha(NiGeometry * geometry, float alpha, bool onlySkin)
 	}
 }
 
-void SetArmorSkinAlpha(Actor * thisActor, UInt32 slotMask, float alpha)
+void SetArmorSkinAlpha(Actor* thisActor, UInt32 slotMask, float alpha)
 {
-	TESObjectARMO * skinarmor = GetSkinForm(thisActor, slotMask);
+	TESObjectARMO* skinarmor = GetSkinForm(thisActor, slotMask);
 
 	if (!skinarmor)
 	{
 		return;
 	}
 
-	TESObjectARMA * foundAddon = GetArmorAddonByMask(thisActor->race, skinarmor, slotMask);
+	TESObjectARMA* foundAddon = GetArmorAddonByMask(thisActor->race, skinarmor, slotMask);
 
 	if (foundAddon)
 	{
-		NiAVObject * armorNode = VisitArmorAddon(thisActor, skinarmor, foundAddon);
+		NiAVObject* armorNode = VisitArmorAddon(thisActor, skinarmor, foundAddon);
 
 		if (armorNode)
 		{
-			NiNode * node = armorNode->GetAsNiNode();
+			auto node = armorNode->GetAsNiNode();
 
 			if (node)
 			{
 				for (UInt32 i = 0; i < node->GetArrayCount(); i++)
 				{
-					NiAVObject * object = node->GetAt(i);
+					auto object = node->GetAt(i);
 
 					if (object)
 					{
@@ -110,7 +110,7 @@ void SetArmorSkinAlpha(Actor * thisActor, UInt32 slotMask, float alpha)
 	}
 }
 
-void ReplaceTextureSet(NiGeometry * geometry, BGSTextureSet * sourceTXST, BGSTextureSet * targetTXST, SInt32 textureType)
+void ReplaceTextureSet(NiGeometry* geometry, BGSTextureSet* sourceTXST, BGSTextureSet* targetTXST, SInt32 textureType)
 {
 	if (!geometry)
 	{
@@ -164,11 +164,11 @@ void ReplaceTextureSet(NiGeometry * geometry, BGSTextureSet * sourceTXST, BGSTex
 			{
 				if (textureType < BSTextureSet::kNumTextures)
 				{
-					BSShaderTextureSet * newTextureSet = BSShaderTextureSet::Create();
+					BSShaderTextureSet* newTextureSet = BSShaderTextureSet::Create();
 
 					for (UInt32 i = 0; i < BSTextureSet::kNumTextures; i++)
 					{
-						const char * texturePath = material->textureSet->GetTexturePath(i);
+						const char* texturePath = material->textureSet->GetTexturePath(i);
 						newTextureSet->SetTexturePath(i, texturePath);
 					}
 
@@ -184,7 +184,7 @@ void ReplaceTextureSet(NiGeometry * geometry, BGSTextureSet * sourceTXST, BGSTex
 	}
 }
 
-void ReplaceSkinTXST(NiGeometry * geometry, BGSTextureSet * TXST, SInt32 textureType)
+void ReplaceSkinTXST(NiGeometry* geometry, BGSTextureSet* TXST, SInt32 textureType)
 {
 	if (!geometry)
 	{
@@ -213,11 +213,11 @@ void ReplaceSkinTXST(NiGeometry * geometry, BGSTextureSet * TXST, SInt32 texture
 			{
 				if (textureType < BSTextureSet::kNumTextures)
 				{
-					BSShaderTextureSet * newTextureSet = BSShaderTextureSet::Create();
+					BSShaderTextureSet* newTextureSet = BSShaderTextureSet::Create();
 
 					for (UInt32 i = 0; i < BSTextureSet::kNumTextures; i++)
 					{
-						const char * texturePath = material->textureSet->GetTexturePath(i);
+						const char* texturePath = material->textureSet->GetTexturePath(i);
 						newTextureSet->SetTexturePath(i, texturePath);
 					}
 
@@ -233,9 +233,9 @@ void ReplaceSkinTXST(NiGeometry * geometry, BGSTextureSet * TXST, SInt32 texture
 	}
 }
 
-void SetArmorSkinTXST(Actor * thisActor, BGSTextureSet * TXST, UInt32 slotMask, SInt32 textureType)
+void SetArmorSkinTXST(Actor* thisActor, BGSTextureSet* TXST, UInt32 slotMask, SInt32 textureType)
 {
-	TESObjectARMO * skinarmor = GetSkinForm(thisActor, slotMask);
+	TESObjectARMO* skinarmor = GetSkinForm(thisActor, slotMask);
 
 	if (!skinarmor)
 	{
@@ -244,21 +244,21 @@ void SetArmorSkinTXST(Actor * thisActor, BGSTextureSet * TXST, UInt32 slotMask, 
 
 	g_task->AddTask([thisActor, skinarmor, TXST, slotMask, textureType]()
 	{
-		TESObjectARMA * foundAddon = GetArmorAddonByMask(thisActor->race, skinarmor, slotMask);
+		TESObjectARMA* foundAddon = GetArmorAddonByMask(thisActor->race, skinarmor, slotMask);
 
 		if (foundAddon)
 		{
-			NiAVObject * armorNode = VisitArmorAddon(thisActor, skinarmor, foundAddon);
+			auto armorNode = VisitArmorAddon(thisActor, skinarmor, foundAddon);
 
 			if (armorNode)
 			{
-				NiNode * node = armorNode->GetAsNiNode();
+				auto node = armorNode->GetAsNiNode();
 
 				if (node)
 				{
 					for (UInt32 i = 0; i < node->GetArrayCount(); i++)
 					{
-						NiAVObject * object = node->GetAt(i);
+						NiAVObject* object = node->GetAt(i);
 
 						if (object)
 						{
@@ -277,7 +277,7 @@ void SetArmorSkinTXST(Actor * thisActor, BGSTextureSet * TXST, UInt32 slotMask, 
 
 //--------------------------------------------------------------------------------------
 
-void SetShaderPropertyMLP(NiGeometry * geometry, NiGeometry * templateGeometry)
+void SetShaderPropertyMLP(NiGeometry* geometry, NiGeometry* templateGeometry)
 {
 	if (!geometry || !templateGeometry)
 	{
@@ -298,11 +298,11 @@ void SetShaderPropertyMLP(NiGeometry * geometry, NiGeometry * templateGeometry)
 	if (lightingShader && templateLightingShader)
 	{
 		auto material = lightingShader->material;
-		auto templateMaterial = static_cast<BSLightingShaderMaterialMultiLayerParallax *>(templateLightingShader->material);
+		auto templateMaterial = static_cast<BSLightingShaderMaterialMultiLayerParallax*>(templateLightingShader->material);
 
 		if (material && templateMaterial && (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGen || material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint))
 		{
-			auto newMaterial = static_cast<BSLightingShaderMaterialMultiLayerParallax *>(CreateShaderMaterial(BSShaderMaterial::kShaderType_MultilayerParallax));
+			auto newMaterial = static_cast<BSLightingShaderMaterialMultiLayerParallax*>(CreateShaderMaterial(BSShaderMaterial::kShaderType_MultilayerParallax));
 
 			newMaterial->CopyFrom(templateMaterial);
 
@@ -329,10 +329,10 @@ void SetShaderPropertyMLP(NiGeometry * geometry, NiGeometry * templateGeometry)
 			lightingShader->SetFlags(0x38, true); //mlp
 			lightingShader->SetFlags(0x3B, true); //backlighting
 
-			BSShaderTextureSet * newTextureSet = BSShaderTextureSet::Create();
+			BSShaderTextureSet* newTextureSet = BSShaderTextureSet::Create();
 			for (UInt32 i = 0; i < BSTextureSet::kNumTextures; i++)
 			{
-				const char * texturePath = templateMaterial->textureSet->GetTexturePath(i);
+				const char* texturePath = templateMaterial->textureSet->GetTexturePath(i);
 				newTextureSet->SetTexturePath(i, texturePath);
 			}
 			newTextureSet->SetTexturePath(1, material->textureSet->GetTexturePath(1));
@@ -347,30 +347,30 @@ void SetShaderPropertyMLP(NiGeometry * geometry, NiGeometry * templateGeometry)
 	}
 }
 
-NiGeometry * GetArmorGeometry(Actor * thisActor, UInt32 slotMask, SInt32 shaderType)
+NiGeometry* GetArmorGeometry(Actor* thisActor, UInt32 slotMask, SInt32 shaderType)
 {
-	TESObjectARMO * skinarmor = GetSkinForm(thisActor, slotMask);
+	TESObjectARMO* skinarmor = GetSkinForm(thisActor, slotMask);
 
 	if (!skinarmor)
 	{
 		return nullptr;
 	}
 
-	TESObjectARMA * foundAddon = GetArmorAddonByMask(thisActor->race, skinarmor, slotMask);
+	TESObjectARMA* foundAddon = GetArmorAddonByMask(thisActor->race, skinarmor, slotMask);
 
 	if (foundAddon)
 	{
-		NiAVObject * armorNode = VisitArmorAddon(thisActor, skinarmor, foundAddon);
+		NiAVObject* armorNode = VisitArmorAddon(thisActor, skinarmor, foundAddon);
 
 		if (armorNode)
 		{
-			NiNode * node = armorNode->GetAsNiNode();
+			NiNode* node = armorNode->GetAsNiNode();
 
 			if (node)
 			{
 				for (UInt32 i = 0; i < node->GetArrayCount(); i++)
 				{
-					NiAVObject * object = node->GetAt(i);
+					NiAVObject* object = node->GetAt(i);
 
 					if (object && GetShaderPropertyType(object->GetAsNiGeometry()) == shaderType)
 					{
@@ -393,20 +393,20 @@ NiGeometry * GetArmorGeometry(Actor * thisActor, UInt32 slotMask, SInt32 shaderT
 
 //-------------------------MISC ---------------------------------------------------------
 
-NiGeometry * GetHeadPartGeometry(Actor * actor, UInt32 partType)
+NiGeometry* GetHeadPartGeometry(Actor* actor, UInt32 partType)
 {
-	BSFaceGenNiNode * faceNode = actor->GetFaceGenNiNode();
-	auto actorBase = DYNAMIC_CAST<TESNPC*>(actor->baseForm);
+	BSFaceGenNiNode* faceNode = actor->GetFaceGenNiNode();
+	auto actorBase = actor->GetActorBase();
 
 	if (faceNode && actorBase)
 	{
-		BGSHeadPart * facePart = actorBase->GetCurrentHeadPartByType(partType);
+		BGSHeadPart* facePart = actorBase->GetCurrentHeadPartByType(partType);
 		if (facePart)
 		{
-			NiAVObject * headNode = faceNode->GetObjectByName(facePart->partName);
+			NiAVObject* headNode = faceNode->GetObjectByName(facePart->partName);
 			if (headNode)
 			{
-				NiGeometry * geometry = headNode->GetAsNiGeometry();
+				NiGeometry* geometry = headNode->GetAsNiGeometry();
 				if (geometry)
 				{
 					return geometry;
@@ -418,7 +418,7 @@ NiGeometry * GetHeadPartGeometry(Actor * actor, UInt32 partType)
 	return nullptr;
 }
 
-NiAVObject * VisitArmorAddon(Actor * actor, TESObjectARMO * armor, TESObjectARMA * arma)
+NiAVObject* VisitArmorAddon(Actor* actor, TESObjectARMO* armor, TESObjectARMA* arma)
 {
 	char addonString[MAX_PATH];
 	memset(addonString, 0, MAX_PATH);
@@ -426,7 +426,7 @@ NiAVObject * VisitArmorAddon(Actor * actor, TESObjectARMO * armor, TESObjectARMA
 
 	BSFixedString rootName("NPC Root [Root]");
 
-	NiNode * skeletonRoot[2];
+	NiNode* skeletonRoot[2];
 	skeletonRoot[0] = actor->GetNiRootNode(0);
 	skeletonRoot[1] = actor->GetNiRootNode(1);
 
@@ -440,14 +440,14 @@ NiAVObject * VisitArmorAddon(Actor * actor, TESObjectARMO * armor, TESObjectARMA
 	{
 		if (skeletonRoot[i])
 		{
-			NiAVObject * root = skeletonRoot[i]->GetObjectByName(rootName);
+			NiAVObject* root = skeletonRoot[i]->GetObjectByName(rootName);
 			if (root)
 			{
-				NiNode * rootNode = root->GetAsNiNode();
+				NiNode* rootNode = root->GetAsNiNode();
 				if (rootNode)
 				{
 					BSFixedString addonName(addonString); // Find the Armor name from the root
-					NiAVObject * armorNode = skeletonRoot[i]->GetObjectByName(addonName);
+					NiAVObject* armorNode = skeletonRoot[i]->GetObjectByName(addonName);
 
 					if (armorNode)
 					{
@@ -461,7 +461,7 @@ NiAVObject * VisitArmorAddon(Actor * actor, TESObjectARMO * armor, TESObjectARMA
 	return nullptr;
 }
 
-SInt32 GetShaderPropertyType(NiGeometry * geometry)
+SInt32 GetShaderPropertyType(NiGeometry* geometry)
 {
 	if (!geometry)
 	{
@@ -488,7 +488,7 @@ SInt32 GetShaderPropertyType(NiGeometry * geometry)
 	return -1;
 }
 
-UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry)
+UInt32 GetShaderPropertyModdedSkin(NiGeometry* geometry, bool isBodyGeometry)
 {
 	if (!geometry)
 	{
@@ -508,11 +508,31 @@ UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry)
 
 		if (material)
 		{
-			if (material->alpha != 1.0)
+			auto alpha = material->alpha;
+
+			if (isBodyGeometry)
 			{
+				if (alpha != 1.0)
+				{
+					return 1;
+				}
+
+				return 0;
+			}
+
+			auto shaderType = material->GetShaderType();
+
+			if (alpha != 1.0)
+			{
+				if (shaderType == BSShaderMaterial::kShaderType_FaceGenRGBTint)
+				{
+					return 3;
+				}
+
 				return 1;
 			}
-			else if (material->GetShaderType() == BSShaderMaterial::kShaderType_FaceGenRGBTint)
+			
+			if (shaderType == BSShaderMaterial::kShaderType_FaceGenRGBTint)
 			{
 				return 2;
 			}
@@ -525,20 +545,20 @@ UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry)
 //color mixing algorithm
 UInt8 colorMix(UInt8 a, UInt8 b, float t) //t is percentage blend
 {
-	return round(sqrt((1 - t)*pow(b, 2) + t * pow(a, 2)));
+	return round(sqrt((1 - t) * pow(b, 2) + t * pow(a, 2)));
 }
 
 //luminance detection algorithm
 float calculateLuminance(UInt8 R, UInt8 G, UInt8 B) //returns luminance between 0-1.0
 {
-	return (0.2126*R + 0.7152*G + 0.0722*B) / 255;
+	return (0.2126 * R + 0.7152 * G + 0.0722 * B) / 255;
 }
 
 //get worn form
-TESObjectARMO * GetWornForm(Actor* thisActor, UInt32 mask)
+TESObjectARMO* GetWornForm(Actor* thisActor, UInt32 mask)
 {
 	auto exChanges = static_cast<ExtraContainerChanges*>(thisActor->extraData.GetByType(ExtraDataType::ContainerChanges)); //loop through caster inventory
-	InventoryChanges *changes = exChanges ? exChanges->changes : nullptr;
+	InventoryChanges* changes = exChanges ? exChanges->changes : nullptr;
 	ExtraWorn* worn = nullptr;
 	ExtraWornLeft* wornLeft = nullptr;
 
@@ -555,7 +575,7 @@ TESObjectARMO * GetWornForm(Actor* thisActor, UInt32 mask)
 			{
 				continue;
 			}
-			
+
 			if (!data->baseForm->IsArmor())
 			{
 				continue;
@@ -602,11 +622,11 @@ TESObjectARMO* GetSkinForm(Actor* thisActor, UInt32 mask)
 	{
 		equipped = GetWornForm(thisActor, mask);
 
-		if (!equipped) 
+		if (!equipped)
 		{
-			auto actorBase = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+			auto actorBase = thisActor->GetActorBase();
 
-			if (actorBase) 
+			if (actorBase)
 			{
 				equipped = actorBase->skin; // Check ActorBase
 
@@ -624,9 +644,9 @@ TESObjectARMO* GetSkinForm(Actor* thisActor, UInt32 mask)
 }
 
 //get armor addon with mask
-TESObjectARMA * GetArmorAddonByMask(TESRace * race, TESObjectARMO * armor, UInt32 mask)
+TESObjectARMA* GetArmorAddonByMask(TESRace* race, TESObjectARMO* armor, UInt32 mask)
 {
-	for (auto &currentAddon : armor->armorAddons)
+	for (auto& currentAddon : armor->armorAddons)
 	{
 		if (currentAddon && currentAddon->IsValidRace(race) && (currentAddon->GetSlotMask() & mask) == mask)
 		{

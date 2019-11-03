@@ -33,6 +33,10 @@ public:
 		return m_controller;
 	}
 
+	const char * GetName(){
+		return m_name;
+	}
+
 	bool AddExtraData(NiExtraData* extraData);			// 00AB44C0
 
 	// UNTESTED

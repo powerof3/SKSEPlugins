@@ -133,7 +133,7 @@ bool IsActorValid(Actor* actor)
 
 //---------------------------------------------------------------------------------------
 
-namespace BSTaskPool_Hook //runs very frame but only if new actors are added to high process array
+namespace BSTaskPool_Hook //runs every frame but only if new actors are added to high process array
 {
 	void _stdcall Inner()
 	{
@@ -343,12 +343,12 @@ public:
 
 		if (!Requires("FireBurns.esp"))
 		{
-			gLog << "ERROR: FEC's esp (FireBurns.esp) not found. Aborting" << std::endl;
+			gLog << "ERROR: Frozen Electrocuted Combustion esp (FireBurns.esp) not found. Aborting..." << std::endl;
 			return false;
 		}
 
 		SetName("FEC");
-		SetVersion(3.0f);
+		SetVersion(3);
 
 		return true;
 	}

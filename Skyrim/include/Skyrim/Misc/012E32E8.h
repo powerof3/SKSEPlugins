@@ -5,6 +5,7 @@
 #include "Skyrim/TempEffects/ShaderReferenceEffect.h"
 
 #include <Skyrim/NetImmerse/NiRefObject.h>
+#include "Skyrim/BSCore/BSTList.h"
 
 class BGSLoadGameBuffer;
 class BGSSaveFormBuffer;

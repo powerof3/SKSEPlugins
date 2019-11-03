@@ -122,8 +122,8 @@ public:
 	virtual void			Unk_85(void) override;										// 006B8C30
 	virtual void			Unk_86(void) override;										// 006A98B0
 	virtual void			Unk_87(UInt32 arg) override;								// 006A7330
+	virtual void			Disable() override;											// 006AA660
 	virtual void			ResetInventory(bool unk) override;							// 006AA660
-	virtual void			Unk_8A(void) override;										// 006BDF60
 	virtual UInt32			Unk_8B(void) override;										// 006AE000
 	virtual void			Unk_8C(UInt32 arg) override;								// 006A9380
 	virtual bool			Unk_90(UInt32 arg) override;								// 006AFC10

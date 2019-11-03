@@ -2975,6 +2975,9 @@
     <ClInclude Include="include\Skyrim\TempEffects\ShaderReferenceEffect.h">
       <Filter>Header Files\Skyrim\TempEffecs</Filter>
     </ClInclude>
+    <ClInclude Include="include\Skyrim\Misc\FaceGen.h">
+      <Filter>Header Files\Skyrim\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\Skyrim\BSScript\BSScriptNativeFunctionDef.inl">

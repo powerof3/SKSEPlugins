@@ -27,3 +27,6 @@ extern const _ShowNotification ShowNotification;
 
 typedef void(*_MoveRefrToPosition)(TESObjectREFR* source, const RefHandle& pTargetHandle, TESObjectCELL* parentCell, TESWorldSpace* worldSpace, NiPoint3& postion, NiPoint3& rotation);
 extern const _MoveRefrToPosition MoveRefrToPosition;
+
+typedef void(*_Reset3DState_Internal)(VMState * registry, uint32_t stackID, TESObjectREFR* reference);
+extern const _Reset3DState_Internal Reset3DState_Internal;

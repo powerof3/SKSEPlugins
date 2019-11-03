@@ -24,6 +24,7 @@
 #include "Skyrim/Misc/012E32E8.h"
 #include "Skyrim/Misc/GameTime.h"
 #include "Skyrim/TempEffects/ShaderReferenceEffect.h"
+#include "Skyrim/Misc/FaceGen.h"
 
 #include "Skyrim/TESForms/Gameplay/BGSTextureSet.h"
 
@@ -89,7 +90,7 @@ public:
 
 	static VMArray<TESForm*> AddAllEquippedItemsToArray(Actor* thisActor);
 
-	static void ResetActor3D(Actor* thisActor);
+	static bool ResetActor3D(Actor* thisActor);
 
 	static void DecapitateActor(Actor* thisActor);
 	
@@ -172,6 +173,8 @@ public:
 	static VMArray<TESForm*> GetAllGameRaces(VMArray<BGSKeyword*> keywords);
 
 	static VMArray<Actor*> GetActorsByProcessingLevel(UInt32 level);
+
+	static SInt32 GetNumActorsInHigh();
 
 	//--------------------------------------------------------------------------------------------
 	// LIGHT
@@ -273,11 +276,15 @@ public:
 
 	static void StopArtObject(TESObjectREFR* thisRef, BGSArtObject* artObject);
 
+	static void StopAllShaders(TESObjectREFR* thisRef);
+
 	static Actor* GetActorCause(TESObjectREFR* thisRef);
 
 	static Actor* GetClosestActorFromRef(TESObjectREFR* thisRef, float radius);
 
 	static Actor* GetRandomActorFromRef(TESObjectREFR* thisRef, float radius);
+
+	static void	Reset3DState(TESObjectREFR* thisRef);
 
 	//--------------------------------------------------------------------------------------------
 	// PACKAGE

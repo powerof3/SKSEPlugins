@@ -119,7 +119,7 @@ std::optional<NiPoint3> FindNearestVertex(TESObjectREFR* target)
 }
 
 // time
-std::vector<SInt32> GetGameStartDate()
+/*std::vector<SInt32> GetGameStartDate()
 {
 	std::vector<SInt32> vec;
 	vec.reserve(3);
@@ -160,6 +160,81 @@ std::vector<SInt32> GetGameStartDate()
 	}
 
 	return vec;
+}*/
+
+void StopAllShaders_Internal(TESObjectREFR* thisRef)
+{
+	auto singleton = Unknown012E32E8::GetSingleton();
+
+	singleton->activeEffectShaderLock.Lock();
+	for (auto& shaderReferenceEffect : singleton->activeEffectShaders)
+	{
+		if (!shaderReferenceEffect)
+		{
+			continue;
+		}
+
+		auto refHandle = thisRef->CreateRefHandle();
+
+		if (shaderReferenceEffect->refHandle != refHandle)
+		{
+			continue;
+		}
+
+		shaderReferenceEffect->unk28 = 1;
+	}
+	singleton->activeEffectShaderLock.Unlock();
+}
+
+void ResetAlphaAndHead(Actor* thisActor, NiGeometry* geometry)
+{
+	g_task->AddTask([thisActor, geometry]()
+	{
+		auto faceNode = thisActor->GetFaceGenNiNode();
+		if (faceNode)
+		{
+			for (UInt32 i = 0; i < faceNode->GetArrayCount(); i++)
+			{
+				NiAVObject* object = faceNode->GetAt(i);
+
+				if (object)
+				{
+					object->m_flags &= ~0x01;
+				}
+			}
+
+			faceNode->m_flags &= ~0x01;
+		}
+
+		SetShaderPropertyAlpha(geometry, 1.0, true);
+
+		SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Body, 1.0);
+		SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Hands, 1.0);
+		SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Feet, 1.0);
+		SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Tail, 1.0); //tail
+		SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Unnamed21, 1.0); //decap
+	});
+}
+
+void ResetTint(Actor* thisActor)
+{
+	auto actorBase = thisActor->GetActorBase();
+
+	if (actorBase)
+	{
+		NiColorA val;
+		val.r = actorBase->color.red / 255.0;
+		val.g = actorBase->color.green / 255.0;
+		val.b = actorBase->color.blue / 255.0;
+		NiColorA* skinColor = &val;
+
+		NiNode* model = thisActor->GetNiRootNode(0);
+
+		if (model)
+		{
+			UpdateModelSkin(model, &skinColor); //sets body skin color
+		}
+	}
 }
 
 //--------------------------------------------------------------------------------------------
@@ -279,7 +354,7 @@ void PO3_SKSEFunctions::GetSkinColor(Actor* thisActor, BGSColorForm* color)
 		}
 		else
 		{
-			auto actorBase = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+			auto actorBase = thisActor->GetActorBase();
 
 			if (actorBase)
 			{
@@ -327,9 +402,9 @@ void PO3_SKSEFunctions::MixColorWithSkinTone(Actor* thisActor, BGSColorForm* col
 
 	g_task->AddTask([thisActor, color, percentage, manualMode]()
 	{
-		auto thisNPC = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+		auto actorBase = thisActor->GetActorBase();
 
-		if (!thisNPC)
+		if (!actorBase)
 		{
 			return;
 		}
@@ -344,12 +419,12 @@ void PO3_SKSEFunctions::MixColorWithSkinTone(Actor* thisActor, BGSColorForm* col
 		}
 		else
 		{
-			skinLuminance = calculateLuminance(thisNPC->color.red, thisNPC->color.green, thisNPC->color.blue);
+			skinLuminance = calculateLuminance(actorBase->color.red, actorBase->color.green, actorBase->color.blue);
 		}
 
-		UInt8 colorRed = colorMix(color->color.red, thisNPC->color.red, skinLuminance);
-		UInt8 colorGreen = colorMix(color->color.green, thisNPC->color.green, skinLuminance);
-		UInt8 colorBlue = colorMix(color->color.blue, thisNPC->color.blue, skinLuminance);
+		UInt8 colorRed = colorMix(color->color.red, actorBase->color.red, skinLuminance);
+		UInt8 colorGreen = colorMix(color->color.green, actorBase->color.green, skinLuminance);
+		UInt8 colorBlue = colorMix(color->color.blue, actorBase->color.blue, skinLuminance);
 
 		NiColorA val;
 		val.r = colorRed / 255.0;
@@ -484,7 +559,7 @@ void PO3_SKSEFunctions::ReplaceSkinTextureSet(Actor* thisActor, BGSTextureSet* m
 		return;
 	}
 
-	auto actorBase = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+	auto actorBase = thisActor->GetActorBase();
 
 	bool isFemale = false;
 
@@ -511,7 +586,7 @@ void PO3_SKSEFunctions::ReplaceFaceTextureSet(Actor* thisActor, BGSTextureSet* m
 		return;
 	}
 
-	auto actorBase = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+	auto actorBase = thisActor->GetActorBase();
 	bool isFemale = false;
 
 	if (actorBase)
@@ -542,7 +617,7 @@ BGSTextureSet* PO3_SKSEFunctions::GetHeadPartTextureSet(Actor* thisActor, UInt32
 		return nullptr;
 	}
 
-	auto actorBase = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+	auto actorBase = thisActor->GetActorBase();
 
 	if (actorBase)
 	{
@@ -564,7 +639,7 @@ void PO3_SKSEFunctions::SetHeadPartTextureSet(Actor* thisActor, BGSTextureSet* h
 		return;
 	}
 
-	auto actorBase = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+	auto actorBase = thisActor->GetActorBase();
 
 	if (actorBase)
 	{
@@ -593,14 +668,14 @@ void PO3_SKSEFunctions::SetHeadPartAlpha(Actor* thisActor, UInt32 partType, floa
 			if (alpha == 0.0)
 			{
 				geometry->m_flags |= 0x01;
+
 				return;
 			}
-			else
-			{
-				geometry->m_flags &= ~0x01;
-			}
+
+			geometry->m_flags &= ~0x01;
 		}
-		SetShaderPropertyAlpha(geometry, alpha, false);		
+
+		SetShaderPropertyAlpha(geometry, alpha, false);
 	});
 }
 
@@ -618,19 +693,60 @@ void PO3_SKSEFunctions::ToggleChildNode(Actor* thisActor, const BSFixedString& n
 		return;
 	}
 
-	NiAVObject* child = parent->GetObjectByName(nodeName);
+	NiAVObject* child = nullptr;
+	if (nodeName == "faceGenNiNodeSkinned")
+	{
+		child = thisActor->GetFaceGenNiNode();
+	}
+	else
+	{
+		child = parent->GetObjectByName(nodeName);
+	}
 
 	if (child)
 	{
 		g_task->AddTask([child, disable]()
 		{
-			if (!disable)
+			auto node = child->GetAsNiNode();
+
+			if (node)
 			{
-				child->m_flags &= ~0x01;
+				for (UInt32 i = 0; i < node->GetArrayCount(); i++)
+				{
+					NiAVObject* object = node->GetAt(i);
+
+					if (object)
+					{
+						if (!disable)
+						{
+							object->m_flags &= ~0x01;
+						}
+						else
+						{
+							object->m_flags |= 0x01;
+						}
+					}
+				}
+
+				if (!disable)
+				{
+					child->m_flags &= ~0x01;
+				}
+				else
+				{
+					child->m_flags |= 0x01;
+				}
 			}
 			else
 			{
-				child->m_flags |= 0x01;
+				if (!disable)
+				{
+					child->m_flags &= ~0x01;
+				}
+				else
+				{
+					child->m_flags |= 0x01;
+				}
 			}
 		});
 	}
@@ -683,7 +799,7 @@ bool PO3_SKSEFunctions::IsActorSoulTrapped(Actor* thisActor)
 		return false;
 	}
 
-	Actor * caster = nullptr;
+	Actor* caster = nullptr;
 	EffectSetting* mgef = nullptr;
 
 	for (auto& effect : *effects)
@@ -803,65 +919,90 @@ VMArray<TESForm*> PO3_SKSEFunctions::AddAllEquippedItemsToArray(Actor* thisActor
 	return vec;
 }
 
-void PO3_SKSEFunctions::ResetActor3D(Actor* thisActor)
+bool PO3_SKSEFunctions::ResetActor3D(Actor* thisActor)
 {
-	if (!thisActor || !thisActor->Is3DLoaded())
+	if (thisActor && thisActor->Is3DLoaded())
 	{
-		return;
-	}
+		auto headGeometry = GetHeadPartGeometry(thisActor, BGSHeadPart::kTypeFace);
+		auto type = GetShaderPropertyModdedSkin(headGeometry, false);
 
-	NiGeometry* geometry = GetHeadPartGeometry(thisActor, BGSHeadPart::kTypeFace);
-
-	if (!geometry)
-	{
-		if (!thisActor->IsDecapitated(1) && !thisActor->IsOnMount())
+		if (type == 0)
 		{
-			thisActor->QueueNiNodeUpdate(false);
+			auto geometry = GetArmorGeometry(thisActor, BGSBipedObjectForm::kPart_Body, BSShaderMaterial::kShaderType_FaceGenRGBTint);
+
+			type = GetShaderPropertyModdedSkin(geometry, true);
 		}
-		return;
-	}
-
-	UInt32 type = GetShaderPropertyModdedSkin(geometry);
-
-	if (type == 1)
-	{
-		g_task->AddTask([thisActor, geometry]()
+		if (type == 0)
 		{
-			SetShaderPropertyAlpha(geometry, 1.0, true);
-			SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Body, 1.0);
-			SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Hands, 1.0);
-			SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Feet, 1.0);
-			SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Tail, 1.0); //tail
-			SetArmorSkinAlpha(thisActor, BGSBipedObjectForm::kPart_Unnamed21, 1.0); //decap
-		});
-	}
-	else if (type == 2)
-	{
-		if (thisActor == g_thePlayer && !g_thePlayer->IsOnMount())
-		{
-			thisActor->QueueNiNodeUpdate(false);
+			auto geometry = GetArmorGeometry(thisActor, BGSBipedObjectForm::kPart_Hands, BSShaderMaterial::kShaderType_FaceGenRGBTint);
+
+			type = GetShaderPropertyModdedSkin(geometry, true);
 		}
-		else
+		if (type == 0)
 		{
-			auto thisNPC = DYNAMIC_CAST<TESNPC*>(thisActor->baseForm);
+			auto geometry = GetArmorGeometry(thisActor, BGSBipedObjectForm::kPart_Feet, BSShaderMaterial::kShaderType_FaceGenRGBTint);
 
-			if (thisNPC)
+			type = GetShaderPropertyModdedSkin(geometry, true);
+		}
+
+		if (type == 0)
+		{
+			return false;
+		}
+
+		if (thisActor != g_thePlayer)
+		{
+			StopAllShaders_Internal(thisActor);
+		}
+
+		if (type == 1)
+		{
+			if (thisActor != g_thePlayer)
 			{
-				NiColorA val;
-				val.r = thisNPC->color.red / 255.0;
-				val.g = thisNPC->color.green / 255.0;
-				val.b = thisNPC->color.blue / 255.0;
-				NiColorA* skinColor = &val;
+				thisActor->ResetInventory(false);
+			}
+			ResetAlphaAndHead(thisActor, headGeometry);
 
-				NiNode* model = thisActor->GetNiRootNode(0);
-
-				if (model)
+			return true;
+		}
+		if (type == 2)
+		{
+			if (thisActor == g_thePlayer)
+			{
+				if (!thisActor->IsOnMount())
 				{
-					UpdateModelSkin(model, &skinColor); //sets body skin color
+					thisActor->QueueNiNodeUpdate(false);
 				}
 			}
+			else
+			{
+				ResetTint(thisActor);
+			}
+
+			return true;
+		}
+		if (type == 3)
+		{
+			if (thisActor == g_thePlayer)
+			{
+				if (!thisActor->IsOnMount())
+				{
+					thisActor->QueueNiNodeUpdate(false);
+				}
+			}
+			else
+			{
+				thisActor->ResetInventory(false);
+				
+				ResetTint(thisActor);
+				ResetAlphaAndHead(thisActor, headGeometry);
+			}
+
+			return true;
 		}
 	}
+
+	return false;
 }
 
 void PO3_SKSEFunctions::DecapitateActor(Actor* thisActor)
@@ -1023,7 +1164,7 @@ SInt32 PO3_SKSEFunctions::GetActorState(Actor* thisActor)
 
 bool PO3_SKSEFunctions::InstantKill(Actor* thisActor)
 {
-	return thisActor? thisActor->InstantKill() : false;
+	return thisActor ? thisActor->InstantKill() : false;
 }
 
 void PO3_SKSEFunctions::SetShaderType(Actor* thisActor, TESObjectARMO* templateArmor)
@@ -1062,9 +1203,10 @@ bool PO3_SKSEFunctions::AddStringToArray(BSFixedString thisString, VMArray<BSFix
 
 	if (length > 0)
 	{
+		BSFixedString string = nullptr;
+
 		for (UInt32 i = 0; i < length; i++)
 		{
-			BSFixedString string = nullptr;
 			stringArray.GetAt(i, string);
 
 			if (string.c_str() == nullptr)
@@ -1084,9 +1226,10 @@ bool PO3_SKSEFunctions::AddActorToArray(Actor* thisActor, VMArray<Actor*> actorA
 
 	if (length > 0)
 	{
+		Actor* actor = nullptr;
+
 		for (UInt32 i = 0; i < length; i++)
 		{
-			Actor* actor = nullptr;
 			actorArray.GetAt(i, actor);
 
 			if (actor == nullptr)
@@ -1109,9 +1252,10 @@ UInt32 PO3_SKSEFunctions::ArrayStringCount(BSFixedString thisString, VMArray<BSF
 
 	if (length > 0)
 	{
+		BSFixedString string = nullptr;
+
 		for (UInt32 i = 0; i < length; i++)
 		{
-			BSFixedString string = nullptr;
 			stringArray.GetAt(i, string);
 
 			if (string == thisString)
@@ -1139,9 +1283,10 @@ VMArray<BSFixedString> PO3_SKSEFunctions::SortArrayString(VMArray<BSFixedString>
 	std::vector<std::string> vec;
 	vec.reserve(count);
 
+	BSFixedString string = nullptr;
+
 	for (UInt32 i = 0; i < count; i++)
 	{
-		BSFixedString string = nullptr;
 		stringArray.GetAt(i, string);
 
 		if (string.c_str() != nullptr)
@@ -1154,7 +1299,9 @@ VMArray<BSFixedString> PO3_SKSEFunctions::SortArrayString(VMArray<BSFixedString>
 
 	if (result.Allocate(vec.size()))
 	{
-		for (size_t i = 0; i < vec.size(); i++)
+		auto size = vec.size();
+
+		for (size_t i = 0; i < size; i++)
 		{
 			BSFixedString tempString = vec[i].c_str();
 			result.SetAt(i, tempString);
@@ -1524,6 +1671,12 @@ VMArray<Actor*> PO3_SKSEFunctions::GetActorsByProcessingLevel(UInt32 level)
 	}
 
 	return vec;
+}
+
+//gets amount of actors in high process
+SInt32 PO3_SKSEFunctions::GetNumActorsInHigh()
+{
+	return Unknown012E32E8::GetSingleton()->numActorsInHighProcess;
 }
 
 //--------------------------------------------------------------------------------------------
@@ -2341,9 +2494,9 @@ VMArray<TESEffectShader*> PO3_SKSEFunctions::GetAllEffectShaders(TESObjectREFR* 
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
+			auto handle = thisRef->CreateRefHandle();
 
-			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
+			if (handle != shaderReferenceEffect->refHandle)
 			{
 				continue;
 			}
@@ -2376,9 +2529,9 @@ UInt32 PO3_SKSEFunctions::HasEffectShader(TESObjectREFR* thisRef, TESEffectShade
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
+			auto handle = thisRef->CreateRefHandle();
 
-			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
+			if (handle != shaderReferenceEffect->refHandle)
 			{
 				continue;
 			}
@@ -2413,9 +2566,9 @@ VMArray<BGSArtObject*> PO3_SKSEFunctions::GetAllArtObjects(TESObjectREFR* thisRe
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
+			auto handle = thisRef->CreateRefHandle();
 
-			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
+			if (handle != shaderReferenceEffect->refHandle)
 			{
 				continue;
 			}
@@ -2437,7 +2590,6 @@ UInt32 PO3_SKSEFunctions::HasArtObject(TESObjectREFR* thisRef, BGSArtObject* art
 
 	if (thisRef && artObject)
 	{
-		TESObjectREFRPtr refPtr;
 		auto singleton = Unknown012E32E8::GetSingleton();
 
 		singleton->activeEffectShaderLock.Lock();
@@ -2448,9 +2600,9 @@ UInt32 PO3_SKSEFunctions::HasArtObject(TESObjectREFR* thisRef, BGSArtObject* art
 				continue;
 			}
 
-			LookupREFRByHandle(shaderReferenceEffect->refHandle, refPtr);
+			auto handle = thisRef->CreateRefHandle();
 
-			if (!refPtr || thisRef != static_cast<TESObjectREFR*>(refPtr))
+			if (handle != shaderReferenceEffect->refHandle)
 			{
 				continue;
 			}
@@ -2473,6 +2625,14 @@ void PO3_SKSEFunctions::StopArtObject(TESObjectREFR* thisRef, BGSArtObject* artO
 	if (thisRef)
 	{
 		Unknown012E32E8::GetSingleton()->StopArtObject(thisRef, artObject);
+	}
+}
+
+void PO3_SKSEFunctions::StopAllShaders(TESObjectREFR* thisRef)
+{
+	if (thisRef)
+	{
+		StopAllShaders_Internal(thisRef);
 	}
 }
 
@@ -2613,6 +2773,14 @@ Actor* PO3_SKSEFunctions::GetRandomActorFromRef(TESObjectREFR* thisRef, float ra
 	return nullptr;
 }
 
+void PO3_SKSEFunctions::Reset3DState(TESObjectREFR* thisRef)
+{
+	if (thisRef)
+	{
+		Reset3DState_Internal(g_skyrimVM->GetState(), 0, thisRef);
+	}
+}
+
 //--------------------------------------------------------------------------------------------
 // PACKAGE
 //--------------------------------------------------------------------------------------------
@@ -2691,27 +2859,27 @@ UInt32 PO3_SKSEFunctions::GetProjectileType(BGSProjectile* thisProjectile)
 		{
 			return 1;
 		}
-		else if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x02) //Lobber (runes)
+		if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x02) //Lobber (runes)
 		{
 			return 2;
 		}
-		else if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x04) //Beam
+		if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x04) //Beam
 		{
 			return 3;
 		}
-		else if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x08) //Flame
+		if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x08) //Flame
 		{
 			return 4;
 		}
-		else if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x10) //Cone
+		if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x10) //Cone
 		{
 			return 5;
 		}
-		else if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x20) //Barrier
+		if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x20) //Barrier
 		{
 			return 6;
 		}
-		else if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x40) //Arrow
+		if (((thisProjectile->data.unk00 >> 16) & 0x7F) == 0x40) //Arrow
 		{
 			return 7;
 		}
@@ -2881,6 +3049,7 @@ bool PO3_SKSEFunctions::Register(VMState* state)
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllGameSpells, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllGameRaces, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetActorsByProcessingLevel, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetNumActorsInHigh, state);
 
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetLightRadius, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, SetLightRadius, state);
@@ -2924,9 +3093,11 @@ bool PO3_SKSEFunctions::Register(VMState* state)
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetAllArtObjects, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, HasArtObject, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, StopArtObject, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, StopAllShaders, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetActorCause, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetClosestActorFromRef, state);
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetRandomActorFromRef, state);
+	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, Reset3DState, state);
 
 	REGISTER_PAPYRUS_FUNCTION(PO3_SKSEFunctions, GetPackageType, state);
 

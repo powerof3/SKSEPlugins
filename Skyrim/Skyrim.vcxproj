@@ -662,6 +662,7 @@
     <ClInclude Include="include\Skyrim\Misc\BGSSceneInfo.h" />
     <ClInclude Include="include\Skyrim\Misc\BipedAnim.h" />
     <ClInclude Include="include\Skyrim\Misc\BGSFootstepManager.h" />
+    <ClInclude Include="include\Skyrim\Misc\FaceGen.h" />
     <ClInclude Include="include\Skyrim\Misc\GameTime.h" />
     <ClInclude Include="include\Skyrim\Misc\GarbageCollector.h" />
     <ClInclude Include="include\Skyrim\Misc\InventoryChanges.h" />

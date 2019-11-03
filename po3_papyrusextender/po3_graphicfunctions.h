@@ -15,7 +15,7 @@ NiAVObject * VisitArmorAddon(Actor * actor, TESObjectARMO * armor, TESObjectARMA
 NiGeometry * GetHeadPartGeometry(Actor * actor, UInt32 partType);
 
 SInt32 GetShaderPropertyType(NiGeometry * geometry);
-UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry);
+UInt32 GetShaderPropertyModdedSkin(NiGeometry * geometry, bool isBodyGeometry);
 
 void SetArmorSkinAlpha(Actor * thisActor, UInt32 slotMask, float alpha);
 void SetArmorSkinTXST(Actor * thisActor, BGSTextureSet * TXST, UInt32 slotMask, SInt32 textureType);

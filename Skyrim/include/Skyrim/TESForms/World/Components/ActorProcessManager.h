@@ -96,7 +96,7 @@ public:
 	void		* unkD4;		// D4 - NiNode
 	void		* unkD8;		// D8 - NiNode
 	UInt32		unkDC;			// D8
-	void		* unkE0;		// E0 - BSFaceGenNiNode
+	BSFaceGenNiNode*	unkE0;	// E0 - BSFaceGenNiNode
 	void		* unkE4;		// E4
 	UInt32		unkE8;			// E8
 	UInt32		unkEC;			// EC
