@@ -1435,6 +1435,14 @@ void PO3_SKSEFunctions::AddKeywordToForm(TESForm* thisForm, BGSKeyword* KYWDtoAd
 			free(oldData);
 			oldData = nullptr;
 		}
+		else {
+			//There is no old keyword array just add to the new keyword array
+			pKeywords->keywords[0] = KYWDtoAdd;
+
+			//Better safe than sorry
+			free(oldData);
+			oldData = nullptr;
+		}
 	}
 }
 
@@ -2407,6 +2415,14 @@ void PO3_SKSEFunctions::AddKeywordToRef(TESObjectREFR* thisRef, BGSKeyword* KYWD
 
 			pKeywords->keywords[pKeywords->numKeywords - 1] = KYWDtoAdd;
 
+			free(oldData);
+			oldData = nullptr;
+		}
+		else {
+			//There is no old keyword array just add to the new keyword array
+			pKeywords->keywords[0] = KYWDtoAdd;
+
+			//Better safe than sorry
 			free(oldData);
 			oldData = nullptr;
 		}
